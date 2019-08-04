@@ -1,72 +1,56 @@
----
-name: Bilinear Interpolation
-tools:
-image: https://typesetinthefuture.files.wordpress.com/2016/06/bladerunner_0_43_00_esper_machine.jpg
-#alternative: https://typesetinthefuture.files.wordpress.com/2016/06/bladerunner_0_43_00_esper_machine.jpg
-description:
-relative_url: bilinear_interpolation
----
+Gostava de fazer várias abordagens ao problema de upsampling. Uma das
+mais básicas é interpolação bilinear. A ideia é especificar interpolação
+bilinear (em talvez interpolação linear unidimensional), resolver e
+generalizar a solução. Vamos ver no que é que isto dá.
 
-![alt text](https://typesetinthefuture.files.wordpress.com/2016/06/bladerunner_0_43_00_esper_machine.jpg "Blade Runner 1982")
-In this scene in the 1982 Blade Runner, Harrison Ford is trying to find more clues about the whereabouts of the remaining replicants.
-He does this by inserting a small polaroid picture inside a device, and then proceeds to zoom in, pan, and them zoom in some more, mainting an apparent high picture definition.
-To do this using such a small picture we would have to artificially increase the resolution of this picture.
-In mathematics/computer science this is called upsampling.
-To achieve this, we will have to go through a more general approach called image interpolation, which is just to estimate the image intensity values at unseen coordinates.
-
-Linear Interpolation 1D 
+Interpolação linear 1D {#interpolação-linear-1d .unnumbered .unnumbered}
 ======================
 
-The mathematical problem we are trying to solve is the following:
-<img src="../linear_interpolation_1D.png" alt="drawing" width="600"/>
+O problema que queremos resolver é o seguinte:
 
-Simplifying further the problem, we assume we just know (and care about) the values of the closest neighbors $f(x_{i})$ and $f(x_{i+1})$ to estimate a new value $f(x_{\*})$.
-Intuitively, the function value at $x_{\*}$ should be proportional to how close a given neighbor is, so we should started by doing an weighted average of the neighbors' function values implementing the forementioned weight.
+![image](linear_interpolation_1D.png){width="80%"}
 
-$$
-\begin{aligned}
-f(x_{*})&=(1-\frac{x_{*}-x_{i}}{x_{i+1}-x_{i}})f(x_{i})+(1-\frac{x_{i+1}-x_{*}}{x_{i+1}-x_{i}})f(x_{i+1})
-\end{aligned}
-$$
+Creio que uma das maneiras que se pode derivar é assumir que a
+interpolação vai ser uma média pesada pelo inverso da distância ao
+vizinho mais proximo. Parece-me que isto é equivalente a assumirmos que
+$f(x_{*})$ está na linha entre os vizinhos mais próximos $x_{i}$ e
+$x_{i+1}$ então:
 
-Given that the fractions $\frac{x_{\*}-x_{i}}{x_{i+1}-x_{i}}$ and $\frac{x_{i+1}-x_{\*}}{x_{i+1}-x_{i}}$ are normalized distances, i.e. they sum up to one, we can simplify this expression. Ler $d$ be the normalized distance between $x_{\*}$ and $x_{i}$, $d=\frac{x_{\*}-x_{i}}{x_{i+1}-x_{i}}$.
-
-$$
-\begin{aligned}
+$$\begin{aligned}
+f(x_{*})&=(1-\frac{x_{*}-x_{i}}{x_{i+1}-x_{i}})f(x_{i})+(1-\frac{x_{i+1}-x_{*}}{x_{i+1}-x_{i}})f(x_{i+1})\\\end{aligned}$$
+Dado que as fracções $\frac{x_{*}-x_{i}}{x_{i+1}-x_{i}}$ e
+$\frac{x_{i+1}-x_{*}}{x_{i+1}-x_{i}}$ são distâncias em proporção, ou
+seja, sumadas dão 1, podemos simplificar esta expressão. Seja $d$ a
+distância em proporção entre $x_{*}$ e $x_{i}$,
+$d=\frac{x_{*}-x_{i}}{x_{i+1}-x_{i}}$ Então: $$\begin{aligned}
 f(x_{*})&=(1-d)f(x_{i})+(1-(1-d))f(x_{i+1})\\
 &=(1-d)f(x_{i})+(d)f(x_{i+1})\\
-&=f(x_{i})+d(f(x_{i+1})-f(x_{i}))
-\end{aligned}
-$$
+&=f(x_{i})+d(f(x_{i+1})-f(x_{i}))\end{aligned}$$ Para verificar ir a
+../practice/bilinear-interpolation-practice.ipynb.
 
-```python
-import numpy as np
-def find_neighbors(x,new_arg):
-    return np.sort(np.argsort(np.abs(x-new_arg))[:2])
-def interpolate_1d(x,fx,new_arg):
-    x1,x2 = find_neighbors(x,new_arg)
-    distance_in_proportion = (new_arg-x[x1])/(x[x2]-x[x1])
-    return fx[x1]+distance_in_proportion*(fx[x2]-fx[x1])
-```
+Podia ter derivado isto a partir da equação da recta a partir de dois
+pontos, de um sistema de duas equações lineares, a partir de vectores,
+mas acho que a que fiz é a mais interessante. Não só a derivação em si
+mas a equivalência entre traçar uma linha entre dois pontos e atribuir o
+valor de um ponto dessa recta ao novo argumento, e fazer uma média
+pesada pelo inverso da distância aos dois vizinhos mais próximos.
 
-An equally simple idea would be to draw a straight line between the neighbors' function values, and our estimate would be the intersection to a vertical line drawn at $x_{\*}$.
+Fico com a impressão que a abordagem mais adequada a generalizar parece
+ser a que fiz também. Nope. Impressão errada. Não me parece que
+generalize directamente de interpolação linear para interpolação
+bilinear.
 
-We will start by representing one dimensional linear interpolation as the solution of a system of linear equations. 
-Let $x_{i}$ and $x_{i+1}$ be the nearest neighbors of the value we want to interpolate, $x_{\*}$.
-
-$$
-\begin{aligned}
+Vou começar por representar a interpolação linear de uma dimensão como a
+solução a um sistema de equações lineares. Seja $x_{i}$ e $x_{i+1}$ os
+pontos mais próximos do novo ponto cujo valor queremos interpolar
+$x_{*}$. $$\begin{aligned}
 \begin{cases}
 f(x_{i})&=m x_{i}+b\\
 f(x_{i+1})&=m x_{i+1}+b
-\end{cases}
-\end{aligned}
-$$
+\end{cases}\end{aligned}$$
 
-This system is represented by the following matrix-vector equation:
-
-$$
-\begin{aligned}
+Este sistema é representado pela seguinte equação de matrizes e
+vectores: $$\begin{aligned}
 \begin{bmatrix}
 1&x_{i}\\
 1&x_{i+1}
@@ -79,14 +63,8 @@ m
 \begin{bmatrix}
 f(x_{i})\\
 f(x_{i+1})
-\end{bmatrix}
-\end{aligned}
-$$ 
-
-The weights $b$ and $m$ are represented by the equation: 
-
-$$
-\begin{aligned}
+\end{bmatrix}\end{aligned}$$ Os pesos $b$ e $m$ sao representados pela
+equação: $$\begin{aligned}
 \begin{bmatrix}
 b\\
 m
@@ -117,31 +95,18 @@ f(x_{i+1})
 \begin{bmatrix}
 x_{i+1}f(x_{i})-x_{i}f(x_{i+1})\\
 f(x_{i+1})-f(x_{i})
-\end{bmatrix}
-\end{aligned}
-$$ 
-
-The line equation is:
-
+\end{bmatrix}\end{aligned}$$ A equação da recta que nos interessa é:
 $$\begin{aligned}
 f(x_{*})&=
 \frac{f(x_{i+1})-f(x_{i})}{x_{i+1}-x_{i}}x_{*}+
 \frac{x_{i+1}f(x_{i})-x_{i}f(x_{i+1})}{x_{i+1}-x_{i}}\\
-&=\frac{1}{x_{i+1}-x_{i}}[(f(x_{i+1})-f(x_{i}))x_{*}+x_{i+1}f(x_{i})-x_{i}f(x_{i+1})]
-\end{aligned}
-$$
+&=\frac{1}{x_{i+1}-x_{i}}[(f(x_{i+1})-f(x_{i}))x_{*}+x_{i+1}f(x_{i})-x_{i}f(x_{i+1})]\end{aligned}$$
 
-``` python
-def interpolate_1d_alternative(x,fx,new_arg):
-    x1,x2 = find_neighbors(x,new_arg)
-    m = ((fx[x2]-fx[x1])/(x[x2]-x[x1]))
-    b = (((x[x2]*fx[x1])-(x[x1]*fx[x2]))/(x[x2]-x[x1]))
-    return (m*new_arg)+b
-```
+Agora tenho de relacionar o sistema com os dois vizinhos mais próximos
+(numa dimensão) com o sistema da interpolação bilinear com os quatro
+vizinhos mais próximos (em duas dimensões).
 
-Now we need to relate the system with the two nearest neighbors, in one dimension, to the system of bilinear interpolation with four closest neighbors in two dimensions.
-
-Bilinear Interpolation 
+Interpolação bilinear {#interpolação-bilinear .unnumbered .unnumbered}
 =====================
 
 Na secção anterior derivei interpolação linear de uma variável de duas
@@ -150,7 +115,7 @@ e outra mais analítica, traçar uma linha entre os vizinhos e encontrar o
 valor dessa linha para um novo argumento $x^{*}$. Agora a ideia é
 generalizar estas ideias para duas dimensões.
 
-Numa dimensão o novo argumento $x^{\*}$ que estamos a tentar interpolar
+Numa dimensão o novo argumento $x^{*}$ que estamos a tentar interpolar
 está rodeado por 2 vizinhos. Ainda no cenário de uma dimensão, nós
 assumimos que sabemos o valor da função destes dois vizinhos. Em duas
 dimensões um argumento já não é rodeado por dois vizinhos. Num mundo
@@ -158,10 +123,7 @@ real, um ponto $(x,y)$ é rodeado por um círculo, todos os pontos $(r,s)$
 que têm a mesma distância de $(x,y)$. Num mundo digital, os pixeis estão
 organizados como matrizes, portanto um ponto é rodeado por 8 vizinhos.
 
-Os oito vizinhos de um ponto (i,j). 
-
-$$
-\begin{aligned}
+Os oito vizinhos de um ponto (i,j). $$\begin{aligned}
 (i-1,j-1)\\
 (i-1,j)\\
 (i-1,j+1)\\
@@ -169,9 +131,7 @@ $$
 (i,j+1)\\
 (i+1,j-1)\\
 (i+1,j)\\
-(i+1,j+1)
-\end{aligned}
-$$
+(i+1,j+1)\\\end{aligned}$$
 
 Fazia sentido assumir que tivesse estes oito vizinhos, mas a
 interpolação bilinear só assume 4. Parecem ser os vizinhos que estão nos
