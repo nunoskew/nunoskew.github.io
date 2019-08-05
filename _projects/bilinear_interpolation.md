@@ -12,7 +12,7 @@ In this scene in the 1982 Blade Runner, Harrison Ford is trying to find more clu
 He does this by inserting a small polaroid picture inside a device, which allows him to zoom in indefinetly while mainting an apparent high picture definition.
 To do this using such a small picture we would have to artificially increase the resolution of this picture.
 In mathematics/computer science this is called upsampling.
-To achieve this, we will have to go through a more general approach called image interpolation, which is just to estimate the image intensity values at unseen coordinates.
+To achieve this, we will explore a more general approach called image interpolation, which is just to estimate the image intensity values at unseen coordinates.
 
 Linear Interpolation 1D 
 ======================
