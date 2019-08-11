@@ -139,9 +139,7 @@ def interpolate_1d_alternative(x,fx,new_arg):
     return (m*new_arg)+b
 ```
 
-> **_Question:_**  Is this approach equivalent to the previous one?
->
-> Don't know for now.
+> **_TODO:_**  Is this approach equivalent to the previous one?
 
 Now we need to relate the system with the two nearest neighbors, in one dimension, to the system of bilinear interpolation with four closest neighbors in two dimensions.
 
@@ -230,3 +228,7 @@ f(x_{8},y_{8})\\
 \end{bmatrix}
 \end{aligned}
 $$
+
+> **_TODO:_** Implemention and test on synthetic data. 
+
+> **_TODO:_** Implementation and test on image. 
