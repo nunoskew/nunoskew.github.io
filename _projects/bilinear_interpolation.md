@@ -139,6 +139,10 @@ def interpolate_1d_alternative(x,fx,new_arg):
     return (m*new_arg)+b
 ```
 
+> **_Question:_**  Is this approach equivalent to the previous one?
+>
+> Don't know for now.
+
 Now we need to relate the system with the two nearest neighbors, in one dimension, to the system of bilinear interpolation with four closest neighbors in two dimensions.
 
 Bilinear Interpolation 
@@ -191,7 +195,7 @@ $$
 
 The function has four parameters. 
 If we get four neighbors, we get four equations of four variables, so the system of equations might be determined, i.e. have exactly one possible solution.
-If we use matrices to describe this scenario, we can represent it as $Ax=y$ and solve it with $x=A^{-1}y$, assumeting that the matrix $A$ has an inverse.
+If we use matrices to describe this scenario, we can represent it as $Ax=y$ and solve it with $x=A^{-1}y$, assuming that the matrix $A$ has an inverse.
 If it doesn't or if we want to use the entire neighborhood composed by the eight points, we solve matrix-vector equation by $x=(A^{T}A)^{-1}A^{T}y$.
 Using matrices, it looks like this:
 
@@ -226,4 +230,3 @@ f(x_{8},y_{8})\\
 \end{bmatrix}
 \end{aligned}
 $$
-
