@@ -144,4 +144,86 @@ Now we need to relate the system with the two nearest neighbors, in one dimensio
 Bilinear Interpolation 
 =====================
 
-Work in progress.
+In the previous section we derived one-dimensional linear interpolation in two different approaches: an intuitive one, the weighted average of the nearest neighbors and an analytical one, draw a line between the nearest neighbors and find the value of that line at the new argument $x^{\*}$.
+In this section we are going to generalize these ideas to two dimensions.
+
+In one dimension, the new argument $x^{\*}$ that we are interpolating is surrounded by 2 neighbors, left and right.
+Furthermore, we assume that we know the value of the function of these two neighbors.
+In two dimensions the argument is no longer surround by two neighbors, but by eight.
+
+These are the eight neighbors of a point $(i,j)$:
+
+$$
+\begin{aligned}
+(i-1,j-1)\\
+(i-1,j)\\
+(i-1,j+1)\\
+(i,j-1)\\
+(i,j+1)\\
+(i+1,j-1)\\
+(i+1,j)\\
+(i+1,j+1)
+\end{aligned}
+$$
+
+It would make sense to assume these eight neighbors, but standard bilinear interpolation only assumes 4.
+They should be the neighbors in the corners of the square defined by the neighborhood.
+
+Although by intuition we should generalize linear interpolation from one to two dimensions using all of the imediate neighborhood, geometrically it does not make that much sense.
+To define a plane, the analogous object of line in three dimensions, we just need three noncoplanar points.
+With eight neighbors, we can choose 52 different planes, therefore 52 different linear interpolations. 
+These are ${8 \choose 3}$ minus the combinations of points that represent lines, the four sides of the square.
+Since we know that bilinear interpolation uses 4 neighbors, this geometrical generalization will not lead us where we want to go.
+
+Lets start by looking into the definition of a bilinear function.
+A function defined in $\mathbb{R}^{2}$, $f(x,y)$, is said to be bilinear if $f_{1}(x)$ and $f_{2}(y)$ are linear functions.
+An example of a bilinear functions is $f(x,y)=xy$.
+
+In the previous analogy of the plane built from 3 noncoplanar points, we do get the idea that there is a connection between building this plane and a weight average of the 3 neighbors, generalizing the intuitive approach of the one-dimensional linear interpolation, but we might be wrong.
+
+I think we can describe any bilinear function in the following way:
+
+$$
+\begin{aligned}
+f(x,y)=a+bx+cy+dxy
+\end{aligned}
+$$
+
+The function has four parameters. 
+If we get four neighbors, we get four equations of four variables, so the system of equations might be determined, i.e. have exactly one possible solution.
+If we use matrices to describe this scenario, we can represent it as $Ax=y$ and solve it with $x=A^{-1}y$, assumeting that the matrix $A$ has an inverse.
+If it doesn't or if we want to use the entire neighborhood composed by the eight points, we solve matrix-vector equation by $x=(A^{T}A)^{-1}A^{T}y$.
+Using matrices, it looks like this:
+
+$$
+\begin{aligned}
+\begin{bmatrix}
+1&x_{1}&y_{1}&x_{1}y_{1}\\
+1&x_{2}&y_{2}&x_{2}y_{2}\\
+1&x_{3}&y_{3}&x_{3}y_{3}\\
+1&x_{4}&y_{4}&x_{4}y_{4}\\
+1&x_{5}&y_{5}&x_{5}y_{5}\\
+1&x_{6}&y_{6}&x_{6}y_{6}\\
+1&x_{7}&y_{7}&x_{7}y_{7}\\
+1&x_{8}&y_{8}&x_{8}y_{8}\\
+\end{bmatrix}
+\begin{bmatrix}
+a\\
+b\\
+c\\
+d
+\end{bmatrix}
+=
+\begin{bmatrix}
+f(x_{1},y_{1})\\
+f(x_{2},y_{2})\\
+f(x_{3},y_{3})\\
+f(x_{4},y_{4})\\
+f(x_{5},y_{5})\\
+f(x_{6},y_{6})\\
+f(x_{7},y_{7})\\
+f(x_{8},y_{8})\\
+\end{bmatrix}
+\end{aligned}
+$$
+
