@@ -7,7 +7,11 @@ weight: 3
 
 # **About Me**
 
-Hey, I'm {{ site.author.name }}.<br>
+Hey, I'm {{ site.author.name }}.
+I'm interested in math and machine learning.
+
+Currently I'm trying to maximize this:
+<br>
 
 <!-- Prepare a container for your calendar. -->
 <script
@@ -30,3 +34,6 @@ Hey, I'm {{ site.author.name }}.<br>
 <script>
     new GitHubCalendar(".calendar", "nunoskew", { responsive: true });
 </script>
+
+<br>
+If you like the content, feel free to drop me a message through Twitter using the small icon below.
