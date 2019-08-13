@@ -139,7 +139,19 @@ def interpolate_1d_alternative(x,fx,new_arg):
     return (m*new_arg)+b
 ```
 
-> **_TODO:_**  Is this approach equivalent to the previous one?
+> **_Question:_**  Is this approach equivalent to the previous one?
+
+Yes, it is!
+
+$$
+\begin{align*}  
+f(x_{*})&=f(x_{i})+\frac{x_{*}-x_{i}}{x_{i+1}-x_{i}}(f(x_{i+1})-f(x_{i}))\\
+&=f(x_{i})+\frac{1}{x_{i+1}-x_{i}}\left(x_{*}f(x_{i+1})-x_{*}f(x_{i})-x_{i}f(x_{i+1})+x_{i}f(x_{i})\right)\\
+&=\frac{x_{i+1}f(x_{i})-x_{i}f(x_{i})}{x_{i+1}-x_{i}}+\frac{1}{x_{i+1}-x_{i}}\left(x_{*}f(x_{i+1})-x_{*}f(x_{i})-x_{i}f(x_{i+1})+x_{i}f(x_{i})\right)\\
+&=\frac{1}{x_{i+1}-x_{i}}\left(x_{*}f(x_{i+1})-x_{*}f(x_{i})-x_{i}f(x_{i+1})+x_{i}f(x_{i})+x_{i+1}f(x_{i})-x_{i}f(x_{i})\right)\\
+&=\frac{1}{x_{i+1}-x_{i}}\left((f(x_{i+1})-f(x_{i}))x_{*}+x_{i+1}f(x_{i})-x_{i}f(x_{i+1})\right)\\
+\end{align*}
+$$
 
 Now we need to relate the system with the two nearest neighbors, in one dimension, to the system of bilinear interpolation with four closest neighbors in two dimensions.
 
