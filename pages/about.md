@@ -24,7 +24,7 @@ Hey, I'm {{ site.author.name }}.<br>
 <!-- Prepare a container for your calendar. -->
 <div class="calendar">
     <!-- Loading stuff -->
-    Loading the data just for you.
+    Loading Github contribution data.
 </div>
 
 <script>
