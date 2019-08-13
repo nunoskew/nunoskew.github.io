@@ -10,7 +10,7 @@ relative_url: bilinear_interpolation
 ![alt text](https://typesetinthefuture.files.wordpress.com/2016/06/bladerunner_0_43_00_esper_machine.jpg "Blade Runner 1982")
 In this scene in the 1982 Blade Runner, Harrison Ford is trying to find more clues about the whereabouts of the remaining replicants.
 He does this by inserting a small polaroid picture inside a device, which allows him to zoom in indefinetly while mainting an apparent high picture definition.
-To do this using such a small picture we would have to artificially increase the resolution of this picture.
+To do this using such a small picture, we would have to artificially increase the resolution of this picture.
 In mathematics/computer science this is called upsampling.
 To achieve this, we will explore a more general approach called image interpolation, which is just to estimate the image intensity values at unseen coordinates.
 
@@ -47,7 +47,32 @@ def interpolate_1d(x,fx,new_arg):
     x1,x2 = find_neighbors(x,new_arg)
     distance_in_proportion = (new_arg-x[x1])/(x[x2]-x[x1])
     return fx[x1]+distance_in_proportion*(fx[x2]-fx[x1])
+fx = np.array([14,2,3,6,7,2,3,6,8])
+x=np.linspace(0,len(fx),len(fx))
+plt.scatter(x,fx,c=np.repeat(0,len(fx))!=0)
 ```
+<img 
+    src="../example.svg" 
+    alt="synthetic inital example"
+    width="600px" />
+
+```python
+new_arg_idx = 1
+new_arg = 0.5
+new_x = np.insert(x,new_arg_idx,new_arg)
+new_fx = np.insert(fx,new_arg_idx,interpolate_1d(x,fx,new_arg))
+cat = np.repeat('old',len(new_fx))
+cat[new_arg_idx] = 'new'
+plt.scatter(new_x,new_fx,c=cat!='old')
+```
+
+The interpolated point is the yellow one.
+
+<img 
+    src="../example_part2.svg" 
+    alt="synthetic inital example with interpolation"
+    width="600px" />
+
 
 An equally simple idea would be to draw a straight line between the neighbors' function values, and our estimate would be the intersection to a vertical line drawn at $x_{\*}$.
 
@@ -137,8 +162,21 @@ def interpolate_1d_alternative(x,fx,new_arg):
     m = ((fx[x2]-fx[x1])/(x[x2]-x[x1]))
     b = (((x[x2]*fx[x1])-(x[x1]*fx[x2]))/(x[x2]-x[x1]))
     return (m*new_arg)+b
+new_arg_idx = 1
+new_arg = 0.5
+new_x = np.insert(x,new_arg_idx,new_arg)
+new_fx = np.insert(fx,new_arg_idx,interpolate_1d_alternative(x,fx,new_arg))
+cat = np.repeat('old',len(new_fx))
+cat[new_arg_idx] = 'new'
+plt.scatter(new_x,new_fx,c=cat!='old')
 ```
+<img 
+    src="../example_part3.svg" 
+    alt="synthetic inital example with alternative interpolation"
+    width="600px" />
 
+The interpolated point is in the same place as before. 
+This leads to the following question:
 > **_Question:_**  Is this approach equivalent to the previous one?
 
 Yes, it is!
@@ -152,6 +190,13 @@ f(x_{*})&=f(x_{i})+\frac{x_{*}-x_{i}}{x_{i+1}-x_{i}}(f(x_{i+1})-f(x_{i}))\\
 &=\frac{1}{x_{i+1}-x_{i}}\left((f(x_{i+1})-f(x_{i}))x_{*}+x_{i+1}f(x_{i})-x_{i}f(x_{i+1})\right)\\
 \end{align*}
 $$
+
+Hmm.
+
+<img 
+    src="http://mrwgifs.com/wp-content/uploads/2013/11/Walter-Sobchak-Did-Not-Know-That-At-The-Bowling-Ring-In-Big-Lebowski.gif"
+    alt="big lebowski gif"
+    width="600px" />
 
 Now we need to relate the system with the two nearest neighbors, in one dimension, to the system of bilinear interpolation with four closest neighbors in two dimensions.
 
