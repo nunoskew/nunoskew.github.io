@@ -193,7 +193,7 @@ Lets start by looking into the definition of a bilinear function.
 A function defined in $\mathbb{R}^{2}$, $f(x,y)$, is said to be bilinear if $f_{1}(x)$ and $f_{2}(y)$ are linear functions.
 An example of a bilinear functions is $f(x,y)=xy$.
 
-In the previous analogy of the plane built from 3 noncoplanar points, we do get the idea that there is a connection between building this plane and a weight average of the 3 neighbors, generalizing the intuitive approach of the one-dimensional linear interpolation, but we might be wrong.
+In the previous analogy of the plane built from 3 noncoplanar points, we do get the idea that there is a connection between building this plane and a weighted average of the 3 neighbors, generalizing the intuitive approach of the one-dimensional linear interpolation, but we might be wrong.
 
 I think we can describe any bilinear function in the following way:
 
