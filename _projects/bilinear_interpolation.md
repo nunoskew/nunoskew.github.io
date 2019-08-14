@@ -52,7 +52,7 @@ x=np.linspace(0,len(fx),len(fx))
 plt.scatter(x,fx,c=np.repeat(0,len(fx))!=0)
 ```
 <img 
-    src="../example.svg" 
+    src="../../assets/bilinear-interpolation/example.svg" 
     alt="synthetic inital example"
     width="600px" />
 
@@ -285,6 +285,9 @@ f(x_{8},y_{8})\\
 \end{bmatrix}
 \end{aligned}
 $$
+
+Implementing Bilinear Interpolation 
+======================
 
 > **_TODO:_** Implemention and test on synthetic data. 
 
