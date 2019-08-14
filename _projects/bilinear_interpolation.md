@@ -7,7 +7,7 @@ description:
 relative_url: bilinear_interpolation
 ---
 
-![alt text](https://typesetinthefuture.files.wordpress.com/2016/06/bladerunner_0_43_00_esper_machine.jpg "Blade Runner 1982")
+![alt text](../../assets/bilinear-interpolation/bladerunner_esper_machine.jpg "Blade Runner 1982")
 In this scene in the 1982 Blade Runner, Harrison Ford is trying to find more clues about the whereabouts of the remaining replicants.
 He does this by inserting a small polaroid picture inside a device, which allows him to zoom in indefinetly while mainting an apparent high picture definition.
 To do this using such a small picture, we would have to artificially increase the resolution of this picture.
@@ -18,7 +18,7 @@ Linear Interpolation 1D
 ======================
 
 The mathematical problem we are trying to solve is the following:
-<img src="../linear_interpolation_1D.png" alt="drawing" width="600"/>
+<img src="../../assets/bilinear-interpolation/linear_interpolation_1D.png" alt="drawing" width="600"/>
 
 Simplifying further the problem, we assume we just know (and care about) the values of the closest neighbors $f(x_{i})$ and $f(x_{i+1})$ to estimate a new value $f(x_{\*})$.
 Intuitively, the function value at $x_{\*}$ should be proportional to how close a given neighbor is, so we should started by doing an weighted average of the neighbors' function values implementing the forementioned weight.
@@ -69,7 +69,7 @@ plt.scatter(new_x,new_fx,c=cat!='old')
 The interpolated point is the yellow one.
 
 <img 
-    src="../example_part2.svg" 
+    src="../../assets/bilinear-interpolation/example_part2.svg" 
     alt="synthetic inital example with interpolation"
     width="600px" />
 
@@ -171,7 +171,7 @@ cat[new_arg_idx] = 'new'
 plt.scatter(new_x,new_fx,c=cat!='old')
 ```
 <img 
-    src="../example_part3.svg" 
+    src="../../assets/bilinear-interpolation/example_part3.svg" 
     alt="synthetic inital example with alternative interpolation"
     width="600px" />
 
@@ -194,7 +194,7 @@ $$
 Hmm.
 
 <img 
-    src="http://mrwgifs.com/wp-content/uploads/2013/11/Walter-Sobchak-Did-Not-Know-That-At-The-Bowling-Ring-In-Big-Lebowski.gif"
+    src="../../assets/bilinear-interpolation/walter-sobchak-did-not-know-that.gif"
     alt="big lebowski gif"
     width="600px" />
 
