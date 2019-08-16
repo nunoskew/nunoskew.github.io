@@ -2,7 +2,6 @@
 name: Bilinear Interpolation
 tools:
 image: https://typesetinthefuture.files.wordpress.com/2016/06/bladerunner_0_43_00_esper_machine.jpg
-#alternative: https://typesetinthefuture.files.wordpress.com/2016/06/bladerunner_0_43_00_esper_machine.jpg
 description:
 relative_url: bilinear_interpolation
 ---
