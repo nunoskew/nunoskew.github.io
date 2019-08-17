@@ -24,10 +24,13 @@ $$
 
 ## Minimizing the Error Function
 
-We want to find the $\underset{\vec{w}}{\operatorname{argmin}} E[\vec{w}]$ 
+We want to find $\underset{\vec{w}}{\operatorname{argmin}} E[\vec{w}]$.
+
 Lets start by setting up the notation:
 
-Let $r_{i}=y_{i}(\vec{w})-t_{i}=w_0+w_{1}x_{i}-t_{i}$. So $E[r_{i}] =\frac{r_{i}^{2}}{2}$ and $E[\vec{w}]=\frac{1}{2}\sum\limits_{i=1}^{m}r_{i}^{2}$
+Let $r_{i}=y_{i}(\vec{w})-t_{i}=w_0+w_{1}x_{i}-t_{i}$. 
+
+So $E[r_{i}] =\frac{r_{i}^{2}}{2}$ and $E[\vec{w}]=\frac{1}{2}\sum\limits_{i=1}^{m}r_{i}^{2}$
 
 $$
 \begin{align*}
@@ -150,4 +153,4 @@ def compute_weights(x,t):
     src="../../assets/intro_ml/example_2.svg"
     alt="fitted simple linear regression model"
     width="600px" />
-
+You can try out more functions with different amounts of noise using [this jupyter notebook](https://github.com/nunoskew/simple-linear-regression)
