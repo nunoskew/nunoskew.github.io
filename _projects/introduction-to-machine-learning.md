@@ -1,7 +1,7 @@
 ---
-name: Introduction to Machine Learning 
+name: Simple Linear Regression
 tools:
-image: ../../assets/intro_ml/chris_bishop_ml_book.jpg
+image: ../../assets/intro_ml/chris_bishop_ml_book_smallest.jpg
 description:
 relative_url: intro_ml 
 ---
@@ -128,3 +128,26 @@ w_{1}&=\frac{mx^{T}t-\overline{x}\overline{t}}{m\overline{x^{2}}-\overline{x}^{2
 w_{0}&=\frac{1}{m}\left (\overline{t}-w_{1}\overline{x}\right)\\
 \end{align*}
 $$
+
+We can verify these expressions empirically. 
+Generating points through the line $6+3*x$ with some zero-centered randomlly distributed noise:
+<img
+    src="../../assets/intro_ml/example.svg"
+    alt="randomly generated points"
+    width="600px" />
+
+Using the formulas that we derived:
+
+```python
+def compute_weights(x,t):
+    x_sum,x_squared_sum,t_sum,xt_sum = extract_relevant_variables(x,t)
+    w_1 = (len(x)*xt_sum-x_sum*t_sum)/(len(x)*x_squared_sum-(x_sum*x_sum))
+    w_0 = (1/len(x))*(t_sum-w_1*x_sum)
+    return w_0,w_1
+```
+
+<img
+    src="../../assets/intro_ml/example_2.svg"
+    alt="fitted simple linear regression model"
+    width="600px" />
+
