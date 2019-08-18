@@ -372,3 +372,4 @@ Now we can also fit more complex function such as the logarithm!
     alt="simple polynomial regression model fitting log"
     width="600px" />
 
+> **_TODO:_** Add link for regression jupyter notebook
