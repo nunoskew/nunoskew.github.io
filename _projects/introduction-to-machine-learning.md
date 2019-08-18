@@ -1,7 +1,7 @@
 ---
-name: Regression
+name: Regression, part 1
 tools:
-image: ../../assets/intro_ml/chris_bishop_ml_book_smallest.jpg
+image: ../../assets/intro_ml/example_2.png
 description:
 relative_url: intro_ml 
 ---
@@ -155,7 +155,6 @@ def compute_weights(x,t):
     src="../../assets/intro_ml/example_2.svg"
     alt="fitted simple linear regression model"
     width="600px" />
-You can try out more functions with different amounts of noise using [this jupyter notebook](https://github.com/nunoskew/simple-linear-regression).
 
 We are now in good shape to go beyond linear functions and proceed into polynomial functions.
 
@@ -372,4 +371,4 @@ Now we can also fit more complex function such as the logarithm!
     alt="simple polynomial regression model fitting log"
     width="600px" />
 
-> **_TODO:_** Add link for regression jupyter notebook
+You can try out more functions with different amounts of noise using [this jupyter notebook](https://github.com/nunoskew/regression-part1).
