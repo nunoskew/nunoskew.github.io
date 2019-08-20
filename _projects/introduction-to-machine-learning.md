@@ -8,7 +8,7 @@ relative_url: intro_ml
 
 Simple Linear Regression 
 ======================
-## The Model
+## Model
 
 $$
 \begin{align*}
@@ -16,7 +16,7 @@ y(\vec{w})=w_{0}+w_{1}x
 \end{align*}
 $$
 
-## The Error Function
+## Error Function
 
 $$
 \begin{align*}
@@ -166,7 +166,7 @@ We want to be able to fit any function of $\mathbb{R}$ into $\mathbb{R}$.
 Turns out that polynomials are universal approximators. 
 Would like to know how to prove such a statement but we'll leave that for later.
 
-## The model
+## Model
 $$
 \begin{align*}
 y(x,\vec{w})&=\sum\limits_{j=0}^{n}w_{j}x^{j}\\
@@ -372,3 +372,5 @@ Now we can also fit more complex function such as the logarithm!
     width="600px" />
 
 You can try out more functions with different amounts of noise using [this jupyter notebook](https://github.com/nunoskew/regression-part1).
+
+> **_TODO:_** Include regularizers. 
