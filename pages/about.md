@@ -32,7 +32,7 @@ Currently I'm trying to maximize this:
 </div>
 
 <script>
-    new GitHubCalendar(".calendar", "nunoskew", { responsive: true });
+    new GitHubCalendar(".calendar", "nunoskew");
 </script>
 
 <br>

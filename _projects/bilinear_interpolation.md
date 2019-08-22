@@ -1,7 +1,7 @@
 ---
 name: Bilinear Interpolation
 tools:
-image: https://typesetinthefuture.files.wordpress.com/2016/06/bladerunner_0_43_00_esper_machine.jpg
+image: ../../assets/bilinear-interpolation/esper_machine_blade_runner_1982.gif
 description:
 relative_url: bilinear_interpolation
 ---
