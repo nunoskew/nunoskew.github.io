@@ -8,7 +8,7 @@ relative_url: bilinear_interpolation
 
 ![alt text](../../assets/bilinear-interpolation/bladerunner_esper_machine.jpg "Blade Runner 1982")
 In this scene in the 1982 Blade Runner, Harrison Ford is trying to find more clues about the whereabouts of the remaining replicants.
-He does this by inserting a small polaroid picture inside a device, which allows him to zoom in indefinetly while mainting an apparent high picture definition.
+He does this by inserting a small polaroid picture inside a device, which allows him to zoom in indefinetly while maintaining an apparent high picture definition.
 To do this using such a small picture, we would have to artificially increase the resolution of this picture.
 In mathematics/computer science this is called upsampling.
 To achieve this, we will explore a more general approach called image interpolation, which is just to estimate the image intensity values at unseen coordinates.
