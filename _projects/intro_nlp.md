@@ -1,5 +1,5 @@
 ---
-name: Natural Language Processing 
+name: Language models, part 1
 tools:
 image: ../../assets/intro_nlp/her_movie_latest.gif
 description:
