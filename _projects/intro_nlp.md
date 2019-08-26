@@ -6,3 +6,6 @@ description:
 relative_url: intro_nlp
 ---
 This should be an intro to Natural Language Processing.
+
+## Sources
+* [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp)

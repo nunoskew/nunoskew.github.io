@@ -374,3 +374,6 @@ Now we can also fit more complex function such as the logarithm!
 You can try out more functions with different amounts of noise using [this jupyter notebook](https://github.com/nunoskew/regression-part1).
 
 > **_TODO:_** Include regularizers. 
+
+## Sources
+* [Pattern Recognition and Machine Learning](https://www.amazon.com/Pattern-Recognition-Learning-Information-Statistics/dp/0387310738) 

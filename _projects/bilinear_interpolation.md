@@ -291,3 +291,9 @@ Implementing Bilinear Interpolation
 > **_TODO:_** Implemention and test on synthetic data. 
 
 > **_TODO:_** Implementation and test on image. 
+
+## Sources
+* https://en.wikipedia.org/wiki/Bilinear_interpolation 
+* https://rosettacode.org/wiki/Bilinear_interpolation#Python
+
+
