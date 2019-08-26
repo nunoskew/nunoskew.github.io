@@ -96,5 +96,8 @@ def compute_sentence_probability(s):
 >>> compute_sentence_probability('she did not know')
 0.00035411344507094833
 ```
+
+You can try out the code using [this jupyter notebook](https://github.com/nunoskew/language-models-part1).
+
 ## Sources
 * [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp)
