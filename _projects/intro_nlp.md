@@ -9,11 +9,11 @@ relative_url: intro_nlp
 A language model is a function that maps a sentence into a degree of certainty. 
 Usually we normalize it to be between zero and one, so it resembles a probability but it's not.
 A N-gram is the simplest language model, so let's start there.
-We also call N-gram a sequence of size N:
+We also call n-gram a sequence of size n:
 
 $$
 \begin{align*}
-\vec{w}&=(w_{1},w_{2},\ldots,w_{N})\\
+\vec{w}&=w_{1}^{n}=(w_{1},w_{2},\ldots,w_{n})\\
 f(\vec{w})&=p
 \end{align*}
 $$
@@ -48,7 +48,7 @@ f(w_{k-1},w_{k})&=f(w_{k-1})f(w_{k}|w_{k-1})\\
 \end{align*}
 $$
 
-So, we will relax the problem and in the process we'll come up with estimate of $f(w_{k}\|w_{1}^{k-1})$.
+So, we will relax the problem and come up with estimate of $f(w_{k}\|w_{1}^{k-1})$.
 
 $$
 \begin{align*}
@@ -76,7 +76,25 @@ $$
 
 Now is a good time to pause for a moment and implement this model.
 
-> **_TODO:_** Implement bigram 
+```python
+import numpy as np
+from collections import Counter
+from nltk.book import *
 
+# text2 = sense and sensibility by jane austen
+unigram_counts = Counter(text2)
+bigrams = [(text2[i],text2[i+1]) for i in range(len(text2)-1)]
+bigram_counts = Counter(bigrams)
+
+def compute_ngram_probability(ngram):
+    return bigram_counts[ngram]/unigram_counts[ngram[0]]
+
+def compute_sentence_probability(s):
+    s = s.split(' ')
+    return np.exp(np.sum([np.log(compute_ngram_probability((s[i],s[i+1]))) for i in range(len(s)-1)]))
+
+>>> compute_sentence_probability('she did not know')
+0.00035411344507094833
+```
 ## Sources
 * [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp)
