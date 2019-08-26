@@ -30,14 +30,14 @@ Currently I'm trying to maximize this:
     <!-- Loading stuff -->
     Loading Github contribution data.
 </div>
-
-<script>
-    new GitHubCalendar(".calendar", "your-username", {
+<!--new GitHubCalendar(".calendar", "your-username", {
                         responsive: true,
                         proxy: function (url) {
                         return "https://the-proxy-domain.com/req?method=GET&url=https://github.com/nunoskew";
-                        }});
-    new GitHubCalendar(".calendar", "nunoskew", { responsive: true });
+                        }});-->
+
+<script>
+        new GitHubCalendar(".calendar", "nunoskew", { responsive: true });
 </script>
 
 <br>
