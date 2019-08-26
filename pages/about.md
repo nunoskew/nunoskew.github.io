@@ -32,6 +32,11 @@ Currently I'm trying to maximize this:
 </div>
 
 <script>
+    new GitHubCalendar(".calendar", "your-username", {
+                        responsive: true,
+                        proxy: function (url) {
+                        return "https://the-proxy-domain.com/req?method=GET&url=https://github.com/nunoskew";
+                        }});
     new GitHubCalendar(".calendar", "nunoskew", { responsive: true });
 </script>
 
