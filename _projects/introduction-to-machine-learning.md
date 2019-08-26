@@ -375,5 +375,7 @@ You can try out more functions with different amounts of noise using [this jupyt
 
 > **_TODO:_** Include regularizers. 
 
+> **_TODO:_** Optimize error function through SGD and create gif with the line fitting
+
 ## Sources
 * [Pattern Recognition and Machine Learning](https://www.amazon.com/Pattern-Recognition-Learning-Information-Statistics/dp/0387310738) 

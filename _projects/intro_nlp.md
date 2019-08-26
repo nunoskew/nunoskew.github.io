@@ -75,6 +75,8 @@ f\left(w_{k} | w_{k-1}\right)&=\frac{C\left(w_{n-1} w_{n}\right)}{\sum_{w} C\lef
 $$
 
 Now is a good time to pause for a moment and implement this model.
+
 > **_TODO:_** Implement bigram 
+
 ## Sources
 * [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp)
