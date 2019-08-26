@@ -97,7 +97,7 @@ def compute_sentence_probability(s):
 0.00035411344507094833
 ```
 
-You can try out the code using [this jupyter notebook](https://github.com/nunoskew/language-models-part1).
+You can try out the code using [this jupyter notebook](https://github.com/nunoskew/language-models-part-1).
 
 ## Sources
 * [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp)
