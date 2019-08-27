@@ -27,14 +27,8 @@ Currently I'm trying to maximize this:
 
 <!-- Prepare a container for your calendar. -->
 <div class="calendar">
-    <!-- Loading stuff -->
-    Loading Github contribution data.
+Loading Github contribution data.
 </div>
-<!--new GitHubCalendar(".calendar", "your-username", {
-                        responsive: true,
-                        proxy: function (url) {
-                        return "https://the-proxy-domain.com/req?method=GET&url=https://github.com/nunoskew";
-                        }});-->
 
 <script>
         new GitHubCalendar(".calendar", "nunoskew", { responsive: true });

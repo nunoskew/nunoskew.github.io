@@ -5,9 +5,10 @@ image: ../../assets/intro_nlp/her_movie_latest.gif
 description:
 relative_url: intro_nlp
 ---
+
+## N-gram intro
 <details>
 <summary markdown="span">
-N-gram introduction
 </summary>
 A language model is a function that maps a sentence into a degree of certainty. 
 Usually we normalize it to be between zero and one, so it resembles a probability but it's not.

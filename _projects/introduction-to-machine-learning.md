@@ -6,9 +6,12 @@ description:
 relative_url: intro_ml 
 ---
 
-Simple Linear Regression 
-======================
-## Model
+## Simple Linear Regression 
+
+<details>
+<summary markdown="span"></summary>
+
+### Model
 
 $$
 \begin{align*}
@@ -16,7 +19,7 @@ y(\vec{w})=w_{0}+w_{1}x
 \end{align*}
 $$
 
-## Error Function
+### Error Function
 
 $$
 \begin{align*}
@@ -24,7 +27,7 @@ E[\vec{w}]=\frac{1}{2}\sum\limits_{i=1}^{m}(y(x_{i},\vec{w})-t_{i})^{2}
 \end{align*}
 $$
 
-## Minimizing the Error Function
+### Minimizing the Error Function
 
 We want to find $\underset{\vec{w}}{\operatorname{argmin}} E[\vec{w}]$.
 
@@ -157,16 +160,18 @@ def compute_weights(x,t):
     width="600px" />
 
 We are now in good shape to go beyond linear functions and proceed into polynomial functions.
+</details>
 
-Simple Polynomial Regression 
-======================
+## Simple Polynomial Regression 
 
+<details>
+<summary markdown="span"></summary>
 We want to be able to fit any function of $\mathbb{R}$ into $\mathbb{R}$.
 
 Turns out that polynomials are universal approximators. 
 Would like to know how to prove such a statement but we'll leave that for later.
 
-## Model
+### Model
 $$
 \begin{align*}
 y(x,\vec{w})&=\sum\limits_{j=0}^{n}w_{j}x^{j}\\
@@ -176,7 +181,7 @@ $$
 
 Where $\vec{x}$ is a vector composed by the $n+1$ powers of $x$.
 
-## Minimizing the error function
+### Minimizing the error function
 
 The error function is still the mean squared error.
 
@@ -376,6 +381,6 @@ You can try out more functions with different amounts of noise using [this jupyt
 > **_TODO:_** Include regularizers. 
 
 > **_TODO:_** Optimize error function through SGD and create gif with the line fitting
-
+</details>
 ## Sources
 * [Pattern Recognition and Machine Learning](https://www.amazon.com/Pattern-Recognition-Learning-Information-Statistics/dp/0387310738) 

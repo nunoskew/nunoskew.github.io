@@ -13,9 +13,10 @@ To do this using such a small picture, we would have to artificially increase th
 In mathematics/computer science this is called upsampling.
 To achieve this, we will explore a more general approach called image interpolation, which is just to estimate the image intensity values at unseen coordinates.
 
-Linear Interpolation 1D 
-======================
+## Linear Interpolation 1D 
 
+<details>
+<summary markdown="span"></summary>
 The mathematical problem we are trying to solve is the following:
 <img src="../../assets/bilinear-interpolation/linear_interpolation_1D.png" alt="drawing" width="600"/>
 
@@ -198,10 +199,12 @@ Hmm.
     width="600px" />
 
 Now we need to relate the system with the two nearest neighbors, in one dimension, to the system of bilinear interpolation with four closest neighbors in two dimensions.
+</details>
 
-Bilinear Interpolation 
-=====================
+## Bilinear Interpolation 
 
+<details>
+<summary markdown="span"></summary>
 In the previous section we derived one-dimensional linear interpolation in two different approaches: an intuitive one, the weighted average of the nearest neighbors and an analytical one, draw a line between the nearest neighbors and find the value of that line at the new argument $x^{\*}$.
 In this section we are going to generalize these ideas to two dimensions.
 
@@ -284,16 +287,19 @@ f(x_{8},y_{8})\\
 \end{bmatrix}
 \end{aligned}
 $$
+</details>
 
-Implementing Bilinear Interpolation 
-======================
+## Implementing Bilinear Interpolation 
 
+<details>
+<summary markdown="span"></summary>
 > **_TODO:_** Implemention and test on synthetic data. 
 
 > **_TODO:_** Implementation and test on image. 
+</details>
 
 ## Sources
-* https://en.wikipedia.org/wiki/Bilinear_interpolation 
-* https://rosettacode.org/wiki/Bilinear_interpolation#Python
+* [Wikipedia](https://en.wikipedia.org/wiki/Bilinear_interpolation)
+* [Rosetta Code](https://rosettacode.org/wiki/Bilinear_interpolation#Python)
 
 
