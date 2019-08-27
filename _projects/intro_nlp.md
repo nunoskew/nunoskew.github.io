@@ -5,7 +5,10 @@ image: ../../assets/intro_nlp/her_movie_latest.gif
 description:
 relative_url: intro_nlp
 ---
-
+<details>
+<summary>
+N-gram introduction
+</summary>
 A language model is a function that maps a sentence into a degree of certainty. 
 Usually we normalize it to be between zero and one, so it resembles a probability but it's not.
 A N-gram is the simplest language model, so let's start there.
@@ -98,6 +101,6 @@ def compute_sentence_probability(s):
 ```
 
 You can try out the code using [this jupyter notebook](https://github.com/nunoskew/language-models-part-1).
-
+</details>
 ## Sources
 * [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp)
