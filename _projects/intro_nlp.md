@@ -101,5 +101,34 @@ def compute_sentence_probability(s):
 ```
 You can try out the code using [this jupyter notebook](https://github.com/nunoskew/language-models-part-1).
 </details>
+
+## Evaluating a Language Model
+<details>
+<summary markdown='span'></summary>
+We are going to use the standard machine learning model evaluation, training the model in one dataset and testing on another.
+In supervised learning, we try to find a model that produces an output as close as the ground truth as possible, and in this case it will be no different.  
+The direct analogy to supervised learning would be to produce a phrase and compare to what was actually written.
+This would make sense if we had a mapping from descriptors to a target variable. 
+Since we have a mapping of sentences to probabilities, we will compute the probability of producing the ground truth, and the we will consider the best model the one with highest probability.
+
+For information theoretic reasons, that i hope to learn soon, instead of measuring the probability we will have a measure of deviation from the ground truth. 
+It is called perplexity and it consists of the following:
+
+$$
+\begin{align*}
+PP(w_{1}^{n})&=f(w_{1},w_{2},\ldots,w_{n})^{-\frac{1}{n}}\\
+&=\prod\limits_{k=1}^{n}f(w_{k}|w_{k-1})^{-\frac{1}{n}}\\
+&=\exp\left(\sum\limits_{k=1}^{n}\log\left(f(w_{k}|w_{k-1})^{-\frac{1}{n}}\right)\right)\\
+&=\exp\left(\sum\limits_{k=1}^{n}-\frac{1}{n}\log\left(f(w_{k}|w_{k-1})\right)\right)\\
+&=\exp\left(-\frac{1}{n}\sum\limits_{k=1}^{n}\log\left(f(w_{k}|w_{k-1})\right)\right)
+\end{align*}
+$$
+
+We will measure the perplexity of n-grams, with n from 2 to 5.
+
+> **_TODO:_** Implemention perplexity and generalized ngrams
+ 
+</details>
+
 ## Sources
 * [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp)
