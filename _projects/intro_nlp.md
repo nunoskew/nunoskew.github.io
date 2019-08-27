@@ -6,7 +6,7 @@ description:
 relative_url: intro_nlp
 ---
 <details>
-<summary>
+<summary markdown="span">
 N-gram introduction
 </summary>
 A language model is a function that maps a sentence into a degree of certainty. 
@@ -78,7 +78,6 @@ f\left(w_{k} | w_{k-1}\right)&=\frac{C\left(w_{n-1} w_{n}\right)}{\sum_{w} C\lef
 $$
 
 Now is a good time to pause for a moment and implement this model.
-
 ```python
 import numpy as np
 from collections import Counter
@@ -99,7 +98,6 @@ def compute_sentence_probability(s):
 >>> compute_sentence_probability('she did not know')
 0.00035411344507094833
 ```
-
 You can try out the code using [this jupyter notebook](https://github.com/nunoskew/language-models-part-1).
 </details>
 ## Sources

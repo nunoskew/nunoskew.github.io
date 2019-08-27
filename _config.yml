@@ -37,6 +37,9 @@ paginate_path: "/articles/page-:num/"
 ### Posts Permalink ###
 permalink: articles/:title
 
+markdown: kramdown
+kramdown:
+  parse_block_html: true
 
 ### Collections ###
 collections:
