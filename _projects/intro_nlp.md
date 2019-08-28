@@ -89,16 +89,44 @@ unigram_counts = Counter(text2)
 bigrams = [(text2[i],text2[i+1]) for i in range(len(text2)-1)]
 bigram_counts = Counter(bigrams)
 
-def compute_ngram_probability(ngram):
-    return bigram_counts[ngram]/unigram_counts[ngram[0]]
+def compute_bigram_probability(bigram,bigram_coutns,unigram_counts):
+    return bigram_counts[bigram]/unigram_counts[bigram[0]]
 
-def compute_sentence_probability(s):
+def compute_sentence_bigram_probability(s,bigram_counts,unigram_counts):
     s = s.split(' ')
-    return np.exp(np.sum([np.log(compute_ngram_probability((s[i],s[i+1]))) for i in range(len(s)-1)]))
+    return np.exp(np.sum([np.log(compute_bigram_probability((s[i],s[i+1])),bigram_counts,unigram_counts) for i in range(len(s)-1)]))
 
->>> compute_sentence_probability('she did not know')
-0.00035411344507094833
+>>> compute_sentence_probability('she did not care',bigram_counts,unigram_counts)
+4.569205742850947e-05
 ```
+
+We can generalize these notions to n-grams instead of bigrams:
+
+```python
+def compute_ngrams(text,n):
+    if len(text)!=n:
+        return [tuple(text[i:(i+n)]) for i in range(len(text)-n+1)]
+    else:
+        return [tuple(text)]
+
+def compute_ngram_counts(text,n):
+    ngram_counts = Counter(compute_ngrams(text,n))
+    context_counts = Counter(compute_ngrams(text,n-1))
+    return ngram_counts,context_counts
+
+def compute_ngram_probability(ngram,ngram_counts,context_counts,verbose=False):
+    return ngram_counts[ngram]/context_counts[ngram[:len(ngram)-1]]
+
+def compute_sentence_ngram_probability(s,ngram_counts,context_counts):
+    s = s.split(' ')
+    ngrams = compute_ngrams(s,len(list(ngram_counts.keys())[0]))
+    return np.exp(np.sum([np.log(compute_ngram_probability(ngrams[i],ngram_counts,context_counts)) for i in range(len(ngrams))]))
+
+>>> ngram_counts,context_counts = compute_ngram_counts(text2,n=3)
+>>> compute_sentence_ngram_probability('she did not care',ngram_counts,context_counts)
+0.011299435028248582
+```
+
 You can try out the code using [this jupyter notebook](https://github.com/nunoskew/language-models-part-1).
 </details>
 
@@ -124,11 +152,30 @@ PP(w_{1}^{n})&=f(w_{1},w_{2},\ldots,w_{n})^{-\frac{1}{n}}\\
 \end{align*}
 $$
 
-We will measure the perplexity of n-grams, with n from 2 to 5.
+We will measure the perplexity of n-grams on the same dataset we used for training, with n varying from 2 to 5.
 
-> **_TODO:_** Implemention perplexity and generalized ngrams
- 
+```python
+def compute_perplexity(text,ngram_counts,context_counts):
+    ngrams = compute_ngrams(text,len(list(ngram_counts.keys())[0]))
+    return np.exp(-(1/len(text))*np.sum([np.log(compute_ngram_probability(ngrams[i],ngram_counts,context_counts)) for i in range(len(ngrams))]))
+
+>>> for i in range(2,6):
+>>>     ngram_counts,context_counts = compute_ngram_counts(text2,i)
+>>>     print('n=',i,':',compute_perplexity(text2,ngram_counts,context_counts)
+n= 2 : 37.37576749369875
+n= 3 : 4.6990318881662745
+n= 4 : 1.5042243590107542
+n= 5 : 1.095325619353706
+``` 
+
+If we try to compute perplexity or probability on new text, chances are that there are going to be some new ngrams that we did not have on our training set.This is going to make any sentence with these unseen ngrams have probability zero.
+So now it's the perfect time to mention generalization. 
 </details>
 
+## Generalization
+<details>
+<summary markdown="span"></summary>
+> **_TODO:_** Generalization content
+</details>
 ## Sources
 * [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp)
