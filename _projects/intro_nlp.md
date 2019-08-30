@@ -7,7 +7,7 @@ relative_url: intro_nlp
 ---
 
 ## N-gram intro
-<details>
+<details open>
 <summary markdown="span">
 </summary>
 A language model is a function that maps a sentence into a degree of certainty. 
@@ -131,7 +131,7 @@ You can try out the code using [this jupyter notebook](https://github.com/nunosk
 </details>
 
 ## Evaluating a Language Model
-<details>
+<details open>
 <summary markdown='span'></summary>
 We are going to use the standard machine learning model evaluation, training the model in one dataset and testing on another.
 In supervised learning, we try to find a model that produces an output as close as the ground truth as possible, and in this case it will be no different.  
@@ -173,7 +173,7 @@ So now it's the perfect time to mention generalization.
 </details>
 
 ## Generalization
-<details>
+<details open>
 <summary markdown="span"></summary>
 > **_TODO:_** Generalization content
 </details>

@@ -8,7 +8,7 @@ relative_url: intro_ml
 
 ## Simple Linear Regression 
 
-<details>
+<details open>
 <summary markdown="span"></summary>
 
 ### Model
@@ -164,7 +164,7 @@ We are now in good shape to go beyond linear functions and proceed into polynomi
 
 ## Simple Polynomial Regression 
 
-<details>
+<details open>
 <summary markdown="span"></summary>
 We want to be able to fit any function of $\mathbb{R}$ into $\mathbb{R}$.
 
