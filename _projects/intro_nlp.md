@@ -175,7 +175,9 @@ So now it's the perfect time to mention generalization.
 ## Generalization
 <details open>
 <summary markdown="span"></summary>
-> **_TODO:_** Generalization content
+> **_TODO:_** Generalization text and code 
+
+> **_TODO:_** Kneser-Ney smoothing 
 </details>
 ## Sources
 * [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp)
