@@ -1,7 +1,7 @@
 ---
 name: Regression, part 1
 tools:
-image: ../../assets/intro_ml/example_2.png
+image: ../../assets/intro_ml/path856.png
 description:
 relative_url: intro_ml 
 ---

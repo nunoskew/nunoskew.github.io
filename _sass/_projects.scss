@@ -1,11 +1,15 @@
 .project.card {
+    background-color: transparent;
     border-color: transparent;
     border-radius: $rounded-borders;
     text-decoration: none!important;
     margin: 10px auto;
-
+    .card {
+        background-color: transparent;
+    }
     .card-img-top {
-        border-radius: $rounded-borders $rounded-borders $rounded-borders $rounded-borders ;
+        background-color: transparent;
+        border-radius: $rounded-borders $rounded-borders $rounded-borders $rounded-borders;
    }
 
     &:hover:not(.article) {
