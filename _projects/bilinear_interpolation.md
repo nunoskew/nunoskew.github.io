@@ -12,7 +12,8 @@ He does this by inserting a small polaroid picture inside a device, which allows
 To do this using such a small picture, we would have to artificially increase the resolution of this picture.
 In mathematics/computer science this is called upsampling.
 To achieve this, we will explore a more general approach called image interpolation, which is just to estimate the image intensity values at unseen coordinates.
-<details open>
+## Linear Interpolation
+<details closed>
 <summary markdown="span"></summary>
 
 ## Linear Interpolation 1D 
@@ -203,7 +204,7 @@ Now we need to relate the system with the two nearest neighbors, in one dimensio
 
 ## Bilinear Interpolation 
 
-<details open>
+<details closed>
 <summary markdown="span"></summary>
 In the previous section we derived one-dimensional linear interpolation in two different approaches: an intuitive one, the weighted average of the nearest neighbors and an analytical one, draw a line between the nearest neighbors and find the value of that line at the new argument $x^{\*}$.
 In this section we are going to generalize these ideas to two dimensions.
@@ -292,7 +293,7 @@ $$
 
 ## Implementing Bilinear Interpolation 
 
-<details open>
+<details closed>
 <summary markdown="span"></summary>
 > **_TODO:_** Implemention and test on synthetic data. 
 
