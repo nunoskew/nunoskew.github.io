@@ -32,4 +32,3 @@ Loading Github contribution data.
 
 <br>
 -->
-If you like the content, feel free to drop me a message through Twitter using the small icon below.
