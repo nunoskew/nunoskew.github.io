@@ -6,9 +6,9 @@ weight: 3
 ---
 
 # **About Me**
-
+<img src="../assets/nuno_pixel.png" align="left" alt="skew" width="120"/>
 Hey, I'm {{ site.author.name }}.
-I'm interested in math and the process of learning.
+I'm interested in building mathematics.
 
 <!--
 <br>
