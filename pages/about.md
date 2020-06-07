@@ -11,5 +11,5 @@ weight: 3
 
 Hey, I'm {{ site.author.name }}!
 
-Reach out to me through the icons below.
+Reach out to me through the icons at the bottom on the page.
 
