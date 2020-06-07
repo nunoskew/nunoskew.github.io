@@ -327,7 +327,7 @@ def interpolate_pixel(mat):
 ```
 [Here's a link for the implementation in a jupyter notebook](https://github.com/nunoskew/bilinear-interpolation/blob/master/bilinear-interpolation.ipynb).
 </details>
-## Sources
+## Links 
 * [Wikipedia](https://en.wikipedia.org/wiki/Bilinear_interpolation)
 * [Wolfram Mathematica](https://www.wolfram.com/mathematica/)
 * [Mathpix](https://mathpix.com/)
