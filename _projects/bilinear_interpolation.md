@@ -294,7 +294,7 @@ $$
 
 Which makes sense since inteporlation is just a inverse-distance weighted average of the neighboring values and in this case, they are all at the same distance.
 
-If you want to check the math [follow this link](https://github.com/nunoskew/bilinear-interpolation/bilinear-interpolation.pdf).
+If you want to check the math [follow this link](../../assets/bilinear-interpolation/bilinear-interpolation.pdf).
 
 We are now in good shape to implement Bilinear Interpolation! Moving on to the next and final section, Implementing Bilinear Interpolation.
 </details>
