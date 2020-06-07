@@ -10,8 +10,14 @@ relative_url: bilinear_interpolation
 In this scene in the 1982 Blade Runner, Harrison Ford is trying to find more clues about the whereabouts of the remaining replicants.
 He does this by inserting a small polaroid picture inside a device, which allows him to zoom in indefinetly while maintaining an apparent high picture definition.
 To do this using such a small picture, we would have to artificially increase the resolution of this picture.
+
+<img src="../../assets/bilinear-interpolation/upsampling.svg" style="width: 100%" alt="Upsampling">
+
 In mathematics/computer science this is called upsampling.
 To achieve this, we will explore a more general approach called image interpolation, which is just to estimate the image intensity values at unseen coordinates.
+
+The upsampled image was created using the math and code derived in this post.
+If you're interested, expand the sections below!
 ## Linear Interpolation
 <details closed>
 <summary markdown="span"></summary>
@@ -19,7 +25,7 @@ To achieve this, we will explore a more general approach called image interpolat
 ## Linear Interpolation 1D 
 
 The mathematical problem we are trying to solve is the following:
-<img src="../../assets/bilinear-interpolation/linear_interpolation_1D.png" alt="drawing" width="600"/>
+<img src="../../assets/bilinear-interpolation/linear-interpolation-1d.svg" alt="Linear Interpolation 1D" style="width: 100%"/>
 
 Simplifying further the problem, we assume we just know (and care about) the values of the closest neighbors $f(x_{i})$ and $f(x_{i+1})$ to estimate a new value $f(x_{\*})$.
 Intuitively, the function value at $x_{\*}$ should be proportional to how close a given neighbor is, so we should started by doing an weighted average of the neighbors' function values implementing the forementioned weight.
@@ -211,39 +217,17 @@ In this section we are going to generalize these ideas to two dimensions.
 
 In one dimension, the new argument $x^{\*}$ that we are interpolating is surrounded by 2 neighbors, left and right.
 Furthermore, we assume that we know the value of the function of these two neighbors.
-In two dimensions the argument is no longer surround by two neighbors, but by eight.
-
-These are the eight neighbors of a point $(i,j)$:
-
-$$
-\begin{aligned}
-(i-1,j-1)\\
-(i-1,j)\\
-(i-1,j+1)\\
-(i,j-1)\\
-(i,j+1)\\
-(i+1,j-1)\\
-(i+1,j)\\
-(i+1,j+1)
-\end{aligned}
-$$
+In a grid of two dimensions, the argument is no longer surround by two neighbors, but by eight.
 
 It would make sense to assume these eight neighbors, but standard bilinear interpolation only assumes 4.
-They should be the neighbors in the corners of the square defined by the neighborhood.
 
-Although by intuition we should generalize linear interpolation from one to two dimensions using all of the imediate neighborhood, geometrically it does not make that much sense.
-To define a plane, the analogous object of line in three dimensions, we just need three noncoplanar points.
-With eight neighbors, we can choose 52 different planes, therefore 52 different linear interpolations. 
-These are ${8 \choose 3}$ minus the combinations of points that represent lines, the four sides of the square.
-Since we know that bilinear interpolation uses 4 neighbors, this geometrical generalization will not lead us where we want to go.
+<img src="../../assets/bilinear-interpolation/bilinear_interpolation.svg" style="width: 50%" alt="Bilinear Interpolation Figure">
 
 Lets start by looking into the definition of a bilinear function.
 A function defined in $\mathbb{R}^{2}$, $f(x,y)$, is said to be bilinear if $f_{1}(x)$ and $f_{2}(y)$ are linear functions.
 An example of a bilinear functions is $f(x,y)=xy$.
 
-In the previous analogy of the plane built from 3 noncoplanar points, we do get the idea that there is a connection between building this plane and a weighted average of the 3 neighbors, generalizing the intuitive approach of the one-dimensional linear interpolation, but we might be wrong.
-
-I think we can describe any bilinear function in the following way:
+We can describe any bilinear function in the following way:
 
 $$
 \begin{aligned}
@@ -251,23 +235,16 @@ f(x,y)=a+bx+cy+dxy
 \end{aligned}
 $$
 
-The function has four parameters. 
-If we get four neighbors, we get four equations of four variables, so the system of equations might be determined, i.e. have exactly one possible solution.
-If we use matrices to describe this scenario, we can represent it as $Ax=y$ and solve it with $x=A^{-1}y$, assuming that the matrix $A$ has an inverse.
-If it doesn't or if we want to use the entire neighborhood composed by the eight points, we solve matrix-vector equation by $x=(A^{T}A)^{-1}A^{T}y$.
-Using matrices, it looks like this:
+The function has four parameters $a,b,c$ and $d$.
+We can find these parameters by solving,
 
 $$
 \begin{aligned}
 \begin{bmatrix}
 1&x_{1}&y_{1}&x_{1}y_{1}\\
+1&x_{1}&y_{2}&x_{1}y_{2}\\
+1&x_{2}&y_{1}&x_{2}y_{1}\\
 1&x_{2}&y_{2}&x_{2}y_{2}\\
-1&x_{3}&y_{3}&x_{3}y_{3}\\
-1&x_{4}&y_{4}&x_{4}y_{4}\\
-1&x_{5}&y_{5}&x_{5}y_{5}\\
-1&x_{6}&y_{6}&x_{6}y_{6}\\
-1&x_{7}&y_{7}&x_{7}y_{7}\\
-1&x_{8}&y_{8}&x_{8}y_{8}\\
 \end{bmatrix}
 \begin{bmatrix}
 a\\
@@ -277,31 +254,82 @@ d
 \end{bmatrix}
 =
 \begin{bmatrix}
-f(x_{1},y_{1})\\
-f(x_{2},y_{2})\\
-f(x_{3},y_{3})\\
-f(x_{4},y_{4})\\
-f(x_{5},y_{5})\\
-f(x_{6},y_{6})\\
-f(x_{7},y_{7})\\
-f(x_{8},y_{8})\\
+Q_{11}\\
+Q_{12}\\
+Q_{21}\\
+Q_{22}
 \end{bmatrix}
+\end{aligned}
+$$ 
+
+Solving for the coefficients, gives a huge expression,
+
+$$
+\begin{aligned}
+\begin{array}{l}
+a=\frac{Q_{11} x_{2} y_{2}}{\left(x_{1}-x_{2}\right)\left(y_{1}-y_{2}\right)}+\frac{Q_{12} x_{2} y_{1}}{\left(x_{1}-x_{2}\right)\left(y_{2}-y_{1}\right)}+\frac{Q_{21} x_{1} y_{2}}{\left(x_{1}-x_{2}\right)\left(y_{2}-y_{1}\right)}+\frac{Q_{22} x_{1} y_{1}}{\left(x_{1}-x_{2}\right)\left(y_{1}-y_{2}\right)} \\
+b=\frac{Q_{11} y_{2}}{\left(x_{1}-x_{2}\right)\left(y_{2}-y_{1}\right)}+\frac{Q_{12} y_{1}}{\left(x_{1}-x_{2}\right)\left(y_{1}-y_{2}\right)}+\frac{Q_{21} y_{2}}{\left(x_{1}-x_{2}\right)\left(y_{1}-y_{2}\right)}+\frac{Q_{22} y_{1}}{\left(x_{1}-x_{2}\right)\left(y_{2}-y_{1}\right)} \\
+c=\frac{Q_{11} x_{2}}{\left(x_{1}-x_{2}\right)\left(y_{2}-y_{1}\right)}+\frac{Q_{12} x_{2}}{\left(x_{1}-x_{2}\right)\left(y_{1}-y_{2}\right)}+\frac{Q_{21} x_{1}}{\left(x_{1}-x_{2}\right)\left(y_{1}-y_{2}\right)}+\frac{Q_{22} x_{1}}{\left(x_{1}-x_{2}\right)\left(y_{2}-y_{1}\right)} \\
+d=\frac{Q_{11}}{\left(x_{1}-x_{2}\right)\left(y_{1}-y_{2}\right)}+\frac{Q_{12}}{\left(x_{1}-x_{2}\right)\left(y_{2}-y_{1}\right)}+\frac{Q_{21}}{\left(x_{1}-x_{2}\right)\left(y_{2}-y_{1}\right)}+\frac{Q_{22}}{\left(x_{1}-x_{2}\right)\left(y_{1}-y_{2}\right)}
+\end{array}
 \end{aligned}
 $$
 
+Now if we represent the neighboring coordinates relative to the ones of the interpolated value then,
+
+$$
+\begin{aligned}
+(x_{1},y_{1})&=(x-1,y-1)\\
+(x_{1},y_{2})&=(x-1,y+1)\\
+(x_{2},y_{1})&=(x+1,y-1)\\
+(x_{2},y_{2})&=(x+1,y+1)
+\end{aligned}
+$$
+
+And we perform the inner product with $(1,x,y,xy)$, we get,
+
+$$
+f(x,y)=\frac{1}{4}\left(Q_{11}+Q_{21}+Q_{12}+Q_{22}\right)
+$$
+
+Which makes sense since inteporlation is just a inverse-distance weighted average of the neighboring values and in this case, they are all at the same distance.
+
+If you want to check the math [follow this link](https://github.com/nunoskew/bilinear-interpolation/bilinear-interpolation.pdf).
+
+We are now in good shape to implement Bilinear Interpolation! Moving on to the next and final section, Implementing Bilinear Interpolation.
 </details>
 
-## Implementing Bilinear Interpolation 
+## Implementation 
 
 <details closed>
 <summary markdown="span"></summary>
-> **_TODO:_** Implemention and test on synthetic data. 
+In the previous section we saw that in order to estimate a pixel intensity through bilinear interpolation using its four closest neighbors, we just compute the average of their intensities. 
+<img src="../../assets/bilinear-interpolation/bilinear-interpolation-edge-cases.svg" style="width: 50%" alt="Bilinear Interpolation Edge Cases">
+We can safely interpolate 5 but what about 6, 7, 8 and 9?
+There are many ways to infer the intensity of the edge cases, but the one it seems more natural to me is to backoff to linear interpolation of 2 neighbors.
+This means that to interpolate 6 we are going to average the intensities of 1 and 2, and to interpolate 8, 1 and 3.
+This technique is analogous to NLP. 
+When we don't have the probability of a certain Ngram, one of the ways to infer it is to compute a convex combination of its context.
 
-> **_TODO:_** Implementation and test on image. 
+To implement this procedure we do,
+
+```python
+def interpolate_pixel(mat):
+    for i in range(mat.shape[0]):
+        for j in range(mat.shape[1]):
+            if i%2!=0 and j%2!=0:
+                mat[i,j]=np.mean([mat[i-1,j-1],mat[i-1,j+1],mat[i+1,j-1],mat[i+1,j+1]])
+            elif i%2!=0 and j%2==0:
+                mat[i,j]=np.mean([mat[i-1,j],mat[i+1,j]])
+            elif i%2==0 and j%2!=0:
+                mat[i,j]=np.mean([mat[i,j-1],mat[i,j+1]])
+    return mat
+```
+[Here's a link for the implementation in a jupyter notebook](https://github.com/nunoskew/bilinear-interpolation/bilinear-interpolation.ipynb).
 </details>
-
 ## Sources
 * [Wikipedia](https://en.wikipedia.org/wiki/Bilinear_interpolation)
-* [Rosetta Code](https://rosettacode.org/wiki/Bilinear_interpolation#Python)
+* [Wolfram Mathematica](https://www.wolfram.com/mathematica/)
+* [Mathpix](https://mathpix.com/)
 
 
