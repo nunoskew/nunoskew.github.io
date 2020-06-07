@@ -325,7 +325,7 @@ def interpolate_pixel(mat):
                 mat[i,j]=np.mean([mat[i,j-1],mat[i,j+1]])
     return mat
 ```
-[Here's a link for the implementation in a jupyter notebook](https://github.com/nunoskew/bilinear-interpolation/bilinear-interpolation.ipynb).
+[Here's a link for the implementation in a jupyter notebook](https://github.com/nunoskew/bilinear-interpolation/blob/master/bilinear-interpolation.ipynb).
 </details>
 ## Sources
 * [Wikipedia](https://en.wikipedia.org/wiki/Bilinear_interpolation)
