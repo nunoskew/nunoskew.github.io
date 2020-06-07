@@ -20,15 +20,16 @@ The upsampled image was created using the math and code derived in this post.
 If you're interested, expand the sections below!
 ## Linear Interpolation
 <details closed>
-<summary markdown="span"></summary>
-
-## Linear Interpolation 1D 
+<summary markdown="span"><em>Problem Setup</em></summary>
 
 The mathematical problem we are trying to solve is the following:
 <img src="../../assets/bilinear-interpolation/linear-interpolation-1d.svg" alt="Linear Interpolation 1D" style="width: 100%"/>
 
 Simplifying further the problem, we assume we just know (and care about) the values of the closest neighbors $f(x_{i})$ and $f(x_{i+1})$ to estimate a new value $f(x_{\*})$.
 Intuitively, the function value at $x_{\*}$ should be proportional to how close a given neighbor is, so we should started by doing an weighted average of the neighbors' function values implementing the forementioned weight.
+</details>
+<details closed>
+<summary markdown="span"><em>A weighted average of neighbors</em></summary>
 
 $$
 \begin{aligned}
@@ -79,7 +80,9 @@ The interpolated point is the yellow one.
     src="../../assets/bilinear-interpolation/example_part2.svg" 
     alt="synthetic inital example with interpolation"
     width="600px" />
-
+</details>
+<details closed>
+<summary markdown="span"><em>Geometric Perspective</em></summary>
 
 An equally simple idea would be to draw a straight line between the neighbors' function values, and our estimate would be the intersection to a vertical line drawn at $x_{\*}$.
 
@@ -211,7 +214,7 @@ Now we need to relate the system with the two nearest neighbors, in one dimensio
 ## Bilinear Interpolation 
 
 <details closed>
-<summary markdown="span"></summary>
+<summary markdown="span"><em>Problem Setup</em></summary>
 In the previous section we derived one-dimensional linear interpolation in two different approaches: an intuitive one, the weighted average of the nearest neighbors and an analytical one, draw a line between the nearest neighbors and find the value of that line at the new argument $x^{\*}$.
 In this section we are going to generalize these ideas to two dimensions.
 
@@ -261,6 +264,9 @@ Q_{22}
 \end{bmatrix}
 \end{aligned}
 $$ 
+</details>
+<details closed>
+<summary markdown="span"><em>Solving for the coefficients</em></summary>
 
 Solving for the coefficients, gives a huge expression,
 
@@ -299,10 +305,8 @@ If you want to check the math [follow this link](../../assets/bilinear-interpola
 We are now in good shape to implement Bilinear Interpolation! Moving on to the next and final section, Implementing Bilinear Interpolation.
 </details>
 
-## Implementation 
-
 <details closed>
-<summary markdown="span"></summary>
+<summary markdown="span"><em>Implementation</em></summary>
 In the previous section we saw that in order to estimate a pixel intensity through bilinear interpolation using its four closest neighbors, we just compute the average of their intensities. 
 <img src="../../assets/bilinear-interpolation/bilinear-interpolation-edge-cases.svg" style="width: 50%" alt="Bilinear Interpolation Edge Cases">
 We can safely interpolate 5 but what about 6, 7, 8 and 9?
