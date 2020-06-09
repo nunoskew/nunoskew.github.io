@@ -17,7 +17,7 @@ In mathematics/computer science this is called upsampling.
 To achieve this, we will explore a more general approach called image interpolation, which is just to estimate the image intensity values at unseen coordinates.
 
 The upsampled image was created using the math and code derived in this post.
-If you're interested, expand the sections below!
+If you're interested, <em><ins>expand the sections below</ins></em>!
 ## Linear Interpolation
 <details closed>
 <summary markdown="span"><em>Problem Setup</em></summary>
