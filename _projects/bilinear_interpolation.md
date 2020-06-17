@@ -6,18 +6,19 @@ description:
 relative_url: bilinear_interpolation
 ---
 
-![alt text](../../assets/bilinear-interpolation/bladerunner_esper_machine.jpg "Blade Runner 1982")
+<img src="../../assets/bilinear-interpolation/bladerunner_esper_machine.jpg" style="width: 50%" alt="Blade Runner 1982">
 In this scene in the 1982 Blade Runner, Deckard (Harrison Ford) is trying to find more clues about the whereabouts of the remaining replicants.
 He does this by inserting a small polaroid picture inside a device, which allows him to zoom in indefinetly while maintaining an apparent high picture definition.
 To do this using such a small picture, we would have to artificially increase the resolution of this picture.
-
-<img src="../../assets/bilinear-interpolation/upsampling.svg" style="width: 100%" alt="Upsampling">
+<p>
+<img src="../../assets/bilinear-interpolation/upsampling.svg" style="width: 100%" alt="Upsampling"><em>The image on the right was produced using the code presented in this post.</em>
+</p>
 
 In mathematics/computer science this is called upsampling.
 To achieve this, we will explore a more general approach called image interpolation, which is just to estimate the image intensity values at unseen coordinates.
 
 The upsampled image was created using the math and code derived in this post.
-If you're interested, <em><ins>expand the sections below</ins></em>!
+If you're interested, <ins>expand the sections below</ins>!
 ## Linear Interpolation
 <details closed>
 <summary markdown="span"><em>Problem Setup</em></summary>
@@ -300,7 +301,7 @@ $$
 
 Which makes sense since inteporlation is just a inverse-distance weighted average of the neighboring values and in this case, they are all at the same distance.
 
-If you want to check the math [follow this link](../../assets/bilinear-interpolation/bilinear-interpolation.pdf).
+If you want to check the math <a href="../../assets/bilinear-interpolation/bilinear-interpolation.pdf" target="_blank">follow this link</a>.
 
 We are now in good shape to implement Bilinear Interpolation! Moving on to the next and final section, Implementing Bilinear Interpolation.
 </details>
@@ -329,11 +330,11 @@ def interpolate_pixel(mat):
                 mat[i,j]=np.mean([mat[i,j-1],mat[i,j+1]])
     return mat
 ```
-[Here's a link for the implementation in a jupyter notebook](https://github.com/nunoskew/bilinear-interpolation/blob/master/bilinear-interpolation.ipynb).
+<a href="https://github.com/nunoskew/bilinear-interpolation/" target="_blank">Here's a link for the implementation in a jupyter notebook</a>.
 </details>
 ## Links 
-* [Wikipedia](https://en.wikipedia.org/wiki/Bilinear_interpolation)
-* [Wolfram Mathematica](https://www.wolfram.com/mathematica/)
-* [Mathpix](https://mathpix.com/)
+* <a href="https://en.wikipedia.org/wiki/Bilinear_interpolation" target="_blank">Wikipedia</a>
+* <a href="https://www.wolfram.com/mathematica/" target="_blank">Wolfram Mathematica</a>
+* <a href="https://mathpix.com/" target="_blank">Mathpix</a>
 
 
