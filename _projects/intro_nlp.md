@@ -146,4 +146,4 @@ Don't forget you can try out the code using <a href="https://github.com/nunoskew
 </details>
 
 ## Sources
-* [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp)
+* [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/)
