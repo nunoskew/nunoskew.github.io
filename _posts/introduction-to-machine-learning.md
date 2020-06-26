@@ -1,5 +1,6 @@
 ---
 name: Regression, part 1
+layout: default
 tools:
 image: ../../assets/intro_ml/path856.png
 description:

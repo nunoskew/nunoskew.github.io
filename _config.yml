@@ -46,15 +46,23 @@ collections:
   projects:
     output: true
     permalink: /projects/:name
+  math:
+    output: true
+    permalink: /math/:name
 
 
 ### Defaults for collections ###
 defaults:
   - scope:
       path: ""
-      type: "projects"
+      type:  ["projects","math"]
     values:
       layout: "page"
+#  - scope:
+#      path: ""
+#      type: "math" 
+#    values:
+#      layout: "page"
 
 
 ### Exclude from processing ###
