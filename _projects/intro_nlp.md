@@ -1,6 +1,7 @@
 ---
 name: Language models, part 1
 tools:
+layout: page
 image: ../../assets/intro_nlp/her_movie_latest.gif
 description:
 relative_url: intro_nlp

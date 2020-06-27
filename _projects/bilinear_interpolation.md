@@ -1,6 +1,7 @@
 ---
 name: Bilinear Interpolation
 tools:
+layout: page
 image: ../../assets/bilinear-interpolation/esper_machine_latest.gif
 description:
 relative_url: bilinear_interpolation
