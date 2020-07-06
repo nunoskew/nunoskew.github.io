@@ -11,19 +11,19 @@ relative_url: intro-uni-math
 <details closed><summary markdown="span"><em>The Natural Numbers and Induction</em></summary>
 <details closed><summary markdown="span"><em>The Natural Numbers</em></summary>
 <details closed><summary markdown="span"><em>Definition: Natural Numbers</em></summary>
-![Introduction%20to%20University%20Mathematics%205fcfcb8f75ce485884d6175d259210f5/Untitled.png](Introduction%20to%20University%20Mathematics%205fcfcb8f75ce485884d6175d259210f5/Untitled.png)
+<img src='../../assets/intro-uni-math/definition-natural-number.svg'>
 </details>
 <details closed><summary markdown="span"><em>Definition: Binary Operation</em></summary>
-![Introduction%20to%20University%20Mathematics%205fcfcb8f75ce485884d6175d259210f5/Untitled%201.png](Introduction%20to%20University%20Mathematics%205fcfcb8f75ce485884d6175d259210f5/Untitled%201.png)
+<img src='../../assets/intro-uni-math/definition-binary-operation.svg'>
 </details>
 <details closed><summary markdown="span"><em>Definition: Ordering of Natural Numbers</em></summary>
-![Introduction%20to%20University%20Mathematics%205fcfcb8f75ce485884d6175d259210f5/Untitled%202.png](Introduction%20to%20University%20Mathematics%205fcfcb8f75ce485884d6175d259210f5/Untitled%202.png)
+<img src='../../assets/intro-uni-math/definition-ordering-of-natural-numbers.svg'>
 </details>
 <details closed><summary markdown="span"><em>Proposition: Properties of the Ordering of the Natural Numbers</em></summary>
-![Introduction%20to%20University%20Mathematics%205fcfcb8f75ce485884d6175d259210f5/Untitled%203.png](Introduction%20to%20University%20Mathematics%205fcfcb8f75ce485884d6175d259210f5/Untitled%203.png)
+<img src='../../assets/intro-uni-math/proposition-properties-of-natural-ordering.svg'>
 </details>
 <details closed><summary markdown="span"><em>Definition: Set of Natural Numbers $\mathbb{N}$</em></summary>
-![Introduction%20to%20University%20Mathematics%205fcfcb8f75ce485884d6175d259210f5/Untitled%204.png](Introduction%20to%20University%20Mathematics%205fcfcb8f75ce485884d6175d259210f5/Untitled%204.png)
+<img src='../../assets/intro-uni-math/definition-set-of-natural-numbers.svg'>
 </details>
 </details>
 <details closed><summary markdown="span"><em>Induction</em></summary></details>
