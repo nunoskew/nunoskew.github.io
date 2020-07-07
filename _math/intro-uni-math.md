@@ -2,7 +2,7 @@
 name: Introduction to University Mathematics 
 tools:
 layout: page
-image: ../../assets/intro-uni-math/intro-to-university-mathematics.svg
+image: ../../assets/intro-uni-math/introduction-to-university-mathematics.svg
 description:
 relative_url: intro-uni-math
 ---
