@@ -8,7 +8,7 @@ relative_url: intro-uni-math
 ---
 
 ## Introduction to University Mathematics
-<details closed><summary markdown="span"><em>The Natural Numbers and Induction</em></summary>
+<details closed style='background-color:#A1EF8B'><summary markdown="span" ><em>The Natural Numbers and Induction</em></summary>
 <details closed><summary markdown="span"><em>The Natural Numbers</em></summary>
 <details closed><summary markdown="span"><em>Definition: Natural Numbers</em></summary>
 <img src='../../assets/intro-uni-math/definition-natural-number.svg'>
@@ -30,6 +30,6 @@ relative_url: intro-uni-math
 <details closed><summary markdown="span"><em>Examples</em></summary></details>
 <details closed><summary markdown="span"><em>The Binomial Theorem</em></summary></details>
 </details>
-<details closed><summary markdown="span"><em>Elements of Set Theory and Logic</em></summary></details>
-<details closed><summary markdown="span"><em>Functions</em></summary></details>
-<details closed><summary markdown="span"><em>Writing Mathematics. Constructing Proofs.</em></summary></details>
+<details closed style='background-color:#D8A47F'><summary markdown="span" ><em>Elements of Set Theory and Logic</em></summary></details>
+<details closed style='background-color:#92D5E6'><summary markdown="span" ><em>Functions</em></summary></details>
+<details closed style='background-color:#D3F6DB'><summary markdown="span" ><em>Writing Mathematics. Constructing Proofs.</em></summary></details>
