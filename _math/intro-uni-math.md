@@ -33,3 +33,6 @@ relative_url: intro-uni-math
 <details closed style='background-color:#D8A47F'><summary markdown="span" ><em>Elements of Set Theory and Logic</em></summary></details>
 <details closed style='background-color:#92D5E6'><summary markdown="span" ><em>Functions</em></summary></details>
 <details closed style='background-color:#D3F6DB'><summary markdown="span" ><em>Writing Mathematics. Constructing Proofs.</em></summary></details>
+<br>
+### Links
+[Report](../../assets/intro-uni-math/report-natural-numbers-and-induction.pdf) 
