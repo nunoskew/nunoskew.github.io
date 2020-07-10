@@ -11,5 +11,7 @@ weight: 3
 
 Hey, I'm {{ site.author.name }}!
 
-Reach out through the icons at the bottom of the page.
+Streaming every once in a while at [Twitch](https://www.twitch.tv/skewpt).
+Reach out through the chat/discord or through the icons at the bottom of the page.
+
 
