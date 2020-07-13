@@ -38,3 +38,5 @@ relative_url: intro-uni-math
 [Report](../../assets/intro-uni-math/report-natural-numbers-and-induction.pdf) 
 
 [Notion](https://www.notion.so/skewpt/Introduction-to-University-Mathematics-65d08f2010bb44e0ad6ee8b5eb34b853)
+
+[Anki](../../assets/intro-uni-math/questions-natural-numbers.csv)
