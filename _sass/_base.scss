@@ -14,7 +14,10 @@ details>details>details {
 details>details>details>details  {
     margin-left:3em;
 }
-summary{
+details > summary.notriangle{
+  list-style: none;
+}
+summary {
   outline:none;
 }
 
