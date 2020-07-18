@@ -17,6 +17,9 @@ details>details>details>details  {
 details > summary.notriangle{
   list-style: none;
 }
+details > summary.notriangle::-webkit-details-marker {
+  display: none;
+}
 summary {
   outline:none;
 }
