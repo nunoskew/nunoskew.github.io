@@ -2,7 +2,7 @@
 name: Introduction to University Mathematics 
 tools:
 layout: page
-image: ../../assets/intro-uni-math/introduction-to-university-mathematics.svg
+image: ../../assets/intro-uni-math/introduction-to-university-mathematics-poppins.svg
 description:
 relative_url: intro-uni-math
 ---
@@ -11,8 +11,7 @@ relative_url: intro-uni-math
 <details closed style='background-color:#A1EF8B'><summary markdown="span" ><em>The Natural Numbers and Induction</em></summary>
 <details closed><summary markdown="span" class="notriangle"><a href="../../assets/intro-uni-math/report-natural-numbers.pdf"><em>The Natural Numbers</em></a></summary></details>
 <details closed><summary markdown="span" class="notriangle"><a href="../../assets/intro-uni-math/clean-report-induction.pdf"><em>Induction</em></a></summary></details>
-<details closed><summary markdown="span"><em>Examples</em></summary></details>
-<details closed><summary markdown="span"><em>The Binomial Theorem</em></summary></details>
+<details closed><summary markdown="span" class="notriangle"><a href="../../assets/intro-uni-math/clean-report-binomial-theorem.pdf"><em>The Binomial Theorem</em></a></summary></details>
 </details>
 <details closed style='background-color:#D8A47F'><summary markdown="span" ><em>Elements of Set Theory and Logic</em></summary></details>
 <details closed style='background-color:#92D5E6'><summary markdown="span" ><em>Functions</em></summary></details>
