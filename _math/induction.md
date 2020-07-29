@@ -23,5 +23,5 @@ relative_url: induction
 <details closed style='background-color:#e2e8c0'><summary markdown="span" ><a href="../../assets/induction/infinite-descent.pdf"><em>Infinite Descent</em></a></summary>
 <img src="../../assets/induction/infinite-descent.png">
 </details>
-<details closed style='background-color:#edd9a3'><summary markdown="span" ><a href="../../assets/induction/structural-induction.pdf"><em>(TODO) Structural Induction</em></a></summary></details>
+<details closed style='background-color:#edd9a3'><summary markdown="span" class="notriangle"><a href="../../assets/induction/structural-induction.pdf"><em>(TODO) Structural Induction</em></a></summary></details>
 <br>
