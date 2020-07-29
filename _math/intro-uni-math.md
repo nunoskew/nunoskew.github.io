@@ -17,12 +17,4 @@ relative_url: intro-uni-math
 <details closed style='background-color:#92D5E6'><summary markdown="span" ><em>Functions</em></summary></details>
 <details closed style='background-color:#D3F6DB'><summary markdown="span" ><em>Writing Mathematics. Constructing Proofs.</em></summary></details>
 <br>
-#### Notes
 
-[Notion](https://www.notion.so/skewpt/Introduction-to-University-Mathematics-65d08f2010bb44e0ad6ee8b5eb34b853)
-
-[Anki](../../assets/intro-uni-math/questions-natural-numbers.csv)
-
-#### Course 
-
-[University of Oxford](https://courses.maths.ox.ac.uk/node/43812)
