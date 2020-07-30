@@ -7,7 +7,7 @@ description:
 relative_url: natural-numbers 
 ---
 
-## Natural Numbers 
+## $$\mathbb{N}$$
 <details closed style="background-color:#edd9a3"><summary markdown="span"><a href="../../assets/intro-uni-math/peano-axioms.pdf"><em>Peano Axioms</em></a></summary>
 <img src="../../assets/intro-uni-math/peano-axioms.png">
 </details>
