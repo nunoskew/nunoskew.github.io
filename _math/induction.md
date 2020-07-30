@@ -7,7 +7,7 @@ description:
 relative_url: induction
 ---
 
-## Induction
+## $$P(k)\rightarrow P(k+1)$$
 <details closed style='background-color:#A1EF8B'><summary markdown="span" ><a href="../../assets/induction/weak-induction.pdf"><em>Weak Induction</em></a></summary>
 <img src="../../assets/induction/weak-induction.png">
 </details>
