@@ -3,18 +3,14 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-
-details {
+details>details {
     margin-left:0.75em;
 }
-details>details {
+details>details>details {
     margin-left:1.5em;
 }
-details>details>details {
-    margin-left:2.25em;
-}
 details>details>details>details  {
-    margin-left:3em;
+    margin-left:2.25em;
 }
 details > summary.notriangle{
   list-style: none;
