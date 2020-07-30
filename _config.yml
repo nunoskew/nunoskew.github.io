@@ -1,6 +1,7 @@
 ### Site Settings ###
 title               : skew 
-description         : >-                               # >- means to ignore newlines until "url:"
+description         : math and ai
+# >- means to ignore newlines until "url:"
 url                 : ""                               # base hostname & protocol for your site (e.g. http://example.com)
 baseurl             : ""                    # subpath of your site (e.g. /blog) [IMPORTANT: use "" if your are hosting at https://username.github.io directly]
 
@@ -41,19 +42,19 @@ kramdown:
 
 ### Collections ###
 collections:
-  projects:
-    output: true
-    permalink: /projects/:name
   math:
     output: true
     permalink: /math/:name
+  projects:
+    output: true
+    permalink: /projects/:name
 
 
 ### Defaults for collections ###
 defaults:
   - scope:
       path: ""
-      type:  ["projects","math"]
+      type:  ["math","projects"]
     values:
       layout: "page"
 #  - scope:
