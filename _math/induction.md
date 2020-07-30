@@ -8,7 +8,10 @@ relative_url: induction
 ---
 
 ## $$P(k)\rightarrow P(k+1)$$
-<details closed style='background-color:#A1EF8B'><summary markdown="span" class="notriangle"><a href="{{ site.baseurl }}{% link _math/weak-induction.md %}"><em>Weak Induction</em></a></summary>
+<details closed style='background-color:#A1EF8B'><summary markdown="span" ><em>Weak Induction</em></summary>
+<details open><summary markdown="span" class="notriangle"></summary>
+<a href="{{ site.baseurl }}{% link _math/weak-induction.md %}"><img src="../../assets/induction/weak-induction.svg"></a>
+</details>
 </details>
 <details closed style='background-color:#D8A47F'><summary markdown="span" ><em>Strong Induction</em></summary>
 <details open><summary markdown="span" class="notriangle"></summary>
