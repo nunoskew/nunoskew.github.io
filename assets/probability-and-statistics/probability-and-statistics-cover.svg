@@ -12,8 +12,8 @@
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
    id="svg4531"
    version="1.1"
-   viewBox="0 0 121.70224 30.186304"
-   height="30.186304mm"
+   viewBox="0 0 121.70224 31.85136"
+   height="31.85136mm"
    width="121.70224mm">
   <defs
      id="defs4525">
@@ -558,9 +558,9 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="g8380"
      inkscape:document-units="mm"
-     inkscape:cy="231.36001"
-     inkscape:cx="26.430104"
-     inkscape:zoom="0.7"
+     inkscape:cy="129.96153"
+     inkscape:cx="125.34858"
+     inkscape:zoom="1.4"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -580,7 +580,7 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-54.56699,-35.889975)"
+     transform="translate(-54.56699,-34.224921)"
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1">
@@ -591,12 +591,12 @@
       <g
          id="g8380">
         <rect
-           y="90.847816"
+           y="89.182762"
            x="264.11203"
-           height="30.186304"
+           height="31.85136"
            width="121.70224"
            id="rect2122"
-           style="fill:#eff9f0;fill-opacity:1;stroke:none;stroke-width:0.309643;stop-color:#000000" />
+           style="fill:#bbcde5;fill-opacity:1;stroke:none;stroke-width:0.318068;stop-color:#000000" />
         <g
            inkscape:label=""
            transform="translate(24.3658,10.547429)"
