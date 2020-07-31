@@ -16,5 +16,6 @@ relative_url: intro-uni-math
 <details closed style='background-color:#D8A47F'><summary markdown="span" ><em>Set Theory</em></summary></details>
 <details closed style='background-color:#92D5E6'><summary markdown="span" ><em>Functions</em></summary></details>
 <details closed style='background-color:#D3F6DB'><summary markdown="span" ><em>Number Theory</em></summary></details>
+<details closed style='background-color:#BBCDE5'><summary markdown="span" ><em>Complex Numbers</em></summary></details>
 <br>
 
