@@ -1,6 +1,6 @@
 ---
 name: Probability and Statistics 
-tools:
+tools: hidden
 layout: page
 image: ../../assets/probability-and-statistics/probability-and-statistics-cover.svg
 description:
