@@ -1,6 +1,6 @@
 ### Site Settings ###
 title               : skew 
-description         : math and ai
+description         : Mathematics and Machine Learning
 # >- means to ignore newlines until "url:"
 url                 : ""                               # base hostname & protocol for your site (e.g. http://example.com)
 baseurl             : ""                    # subpath of your site (e.g. /blog) [IMPORTANT: use "" if your are hosting at https://username.github.io directly]
