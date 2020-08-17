@@ -15,7 +15,7 @@ relative_url: sequences
 </details>
 <details closed style='background-color:#72e1d1'><summary markdown="span" ><em>Inequalities</em></summary>
 <details open><summary markdown="span" class="notriangle"></summary>
-<img src="../../assets/sequences/inequalities.svg">
+<a href="../../assets/sequences/clean-report-inequalities.pdf"><img src="../../assets/sequences/inequalities.svg"></a>
 </details>
 </details>
 <details closed style='background-color:#e4e3d3'><summary markdown="span" ><em>Estimations</em></summary>
