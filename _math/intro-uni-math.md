@@ -7,7 +7,7 @@ description:
 relative_url: intro-uni-math
 ---
 
-## Introduction to University Mathematics
+<h2 style="text-align:left;">Introduction to University Mathematics</h2>
 <details closed style='background-color:#edd9a3'><summary markdown="span" class="notriangle"><em>Logic</em></summary></details>
 <details closed ><summary markdown="span" style='background-color:#c2c5bb' class="notriangle"><em>Natural Numbers</em></summary></details>
 <details closed><summary markdown="span" style='background-color:#e4e3d3' class="notriangle"><a href="{{ site.baseurl }}{% link _math/induction.md %}"><em>Induction</em></a></summary></details>

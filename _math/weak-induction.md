@@ -18,7 +18,7 @@ relative_url: weak-induction
 <a href="../../assets/induction/weak-induction/sum-of-first-n-naturals.pdf" ><img src="../../assets/induction/weak-induction/sum-of-first-n-naturals.svg" ></a>
 </details>
 </div>
-<div style='background-color:#92d5e6;'><em style="margin-left:0.75em;">Upper bounded sum and the Lower bounded product</em>
+<div style='background-color:#92d5e6;'><p style="margin-left:0.75em;margin-right:0.75em;text-align:left;"><em>Upper bounded sum and the Lower bounded product</em></p>
 <details open style="text-align:center;"><summary markdown="span" class="notriangle" ></summary>
 <a href="../../assets/induction/weak-induction/upper-bounded-sum-and-the-lower-bounded-product.pdf" ><img src="../../assets/induction/weak-induction/upper-bounded-sum-and-the-lower-bounded-product.svg" class="aligncenter" ></a>
 </details>
