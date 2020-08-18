@@ -8,26 +8,19 @@ relative_url: weak-induction
 ---
 
 ## Weak Induction
-<details closed style='background-color:#A1EF8B'><summary markdown="span" class="notriangle"><a href="../../assets/induction/weak-induction/binomial-theorem-proof.pdf" ><img src="../../assets/induction/weak-induction/binomial-theorem.svg" ></a></summary>
-/*
-<details open><summary markdown="span" class="notriangle"></summary>
-<a href="../../assets/induction/weak-induction/binomial-theorem-proof.pdf" ><img src="../../assets/induction/weak-induction/binomial-theorem.svg" ></a>
+<div style='background-color:#A1EF8B'><em style="margin-left:0.75em;">Binomial Theorem</em>
+<details open style="text-align:center;"><summary markdown="span" class="notriangle" ></summary>
+<a href="../../assets/induction/weak-induction/binomial-theorem-proof.pdf" ><img src="../../assets/induction/weak-induction/binomial-theorem.svg"></a>
 </details>
-*/
-</details>
-<details closed style='background-color:#D8A47F'><summary markdown="span" class="notriangle"><a href="../../assets/induction/weak-induction/sum-of-first-n-naturals.pdf" ><img src="../../assets/induction/weak-induction/sum-of-first-n-naturals.svg" ></a></summary>
-/*
-<details open><summary markdown="span" class="notriangle"></summary>
+</div>
+<div style='background-color:#D8A47F;'><em style="margin-left:0.75em;"><em>Sum of first n natural numbers</em>
+<details open style="text-align:center;"><summary markdown="span" class="notriangle" ></summary>
 <a href="../../assets/induction/weak-induction/sum-of-first-n-naturals.pdf" ><img src="../../assets/induction/weak-induction/sum-of-first-n-naturals.svg" ></a>
 </details>
-*/
+</div>
+<div style='background-color:#92d5e6;'><em style="margin-left:0.75em;">Upper bounded sum and the Lower bounded product</em>
+<details open style="text-align:center;"><summary markdown="span" class="notriangle" ></summary>
+<a href="../../assets/induction/weak-induction/upper-bounded-sum-and-the-lower-bounded-product.pdf" ><img src="../../assets/induction/weak-induction/upper-bounded-sum-and-the-lower-bounded-product.svg" class="aligncenter" ></a>
 </details>
-<details closed style='background-color:#92d5e6'><summary markdown="span" class="notriangle"><a href="../../assets/induction/weak-induction/upper-bounded-sum-and-the-lower-bounded-product.pdf" ><img src="../../assets/induction/weak-induction/upper-bounded-sum-and-the-lower-bounded-product.svg" ></a></summary>
-/*
-<details open><summary markdown="span" class="notriangle"></summary>
-<a href="../../assets/induction/weak-induction/upper-bounded-sum-and-the-lower-bounded-product.pdf" ><img src="../../assets/induction/weak-induction/upper-bounded-sum-and-the-lower-bounded-product.svg" ></a>
-</details>
-*/
-</details>
-
+</div>
 <br>
