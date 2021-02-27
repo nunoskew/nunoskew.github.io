@@ -9,8 +9,8 @@ weight: 3
 
 <img src="../assets/nuno_pixel.png" align="left" alt="skew" width="120"/>
 
-Hey, I'm {{ site.author.name }}!
+Hey, I'm skew!
 
-Reach out through the chat/discord or through the icons at the bottom of the page.
+Reach out through the icons at the bottom of the page.
 
 
